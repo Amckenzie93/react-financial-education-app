@@ -7,8 +7,9 @@
     "\\public\\Assets\\Styles\\SASS",
     "\\src",
     "\\src\\Components",
-    "\\src\\pages"
+    "\\src\\pages",
+    "\\src\\sharedPages"
   ],
-  "SelectedNode": "\\public\\Assets\\Styles\\SASS\\sideNav.scss",
+  "SelectedNode": "\\public\\Assets\\Styles\\SASS\\main.scss",
   "PreviewInSolutionExplorer": false
 }
