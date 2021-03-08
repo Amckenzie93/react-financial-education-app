@@ -1,0 +1,52 @@
+//React libraries
+import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
+
+//Components
+import Header from "./sharedPages/Header.js";
+import Footer from "./sharedPages/Footer.js";
+
+//Pages
+import HomePage from "./pages/homePage.js";
+import BudgetingPage from "./pages/budgetingPage.js";
+import EducationPage from "./pages/educationPage.js";
+import AboutPage from "./pages/aboutPage.js";
+
+
+class BudgetApplicaion extends React.Component {
+  state = {
+    count: 1
+  };
+
+
+  render() {
+    return (
+      <div>
+        <React.Fragment>
+          <Header />
+        </React.Fragment>
+
+        <div id="MainContent">
+          <AnimatePresence exitBeforeEnter>
+            <Switch>
+              <Route path="/" exact component={HomePage}></Route>
+              <Route path="/education" exact component={EducationPage}></Route>
+              <Route path="/budgeting" exact component={BudgetingPage}></Route>
+              <Route path="/about" exact component={AboutPage}></Route>
+            </Switch>
+          </AnimatePresence>
+        </div>
+
+        {/*
+        <React.Fragment>
+            <Footer />
+        </React.Fragment>
+        */}
+      </div>
+    );
+  }
+
+}
+
+export default BudgetApplicaion;

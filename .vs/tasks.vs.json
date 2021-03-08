@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-main",
+      "appliesTo": "public/Assets/Styles/SASS/main.scss",
+      "type": "launch"
+    }
+  ]
+}

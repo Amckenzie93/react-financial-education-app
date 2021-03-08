@@ -1,0 +1,74 @@
+#SideNav {
+  display: inline-block;
+  width: 360px;
+  height: 100vh;
+  background-color: #252525;
+  color: #fff;
+}
+
+body {
+  font: 18px;
+  color: #333;
+}
+
+body #root .navbar {
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  background: #0000004d;
+}
+
+body #root .navbar a.nav-link {
+  color: #fff;
+  padding: 0.1em;
+  margin-right: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+body #root .navbar a.nav-link:hover {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+body .v-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body .bg-purple-grad {
+  background: #432dff;
+  background: radial-gradient(circle, #432dff 36%, #350299 100%);
+}
+
+body .width100 {
+  width: 100%;
+}
+
+body .btn {
+  padding: .75rem 1.5rem;
+}
+
+body .hero h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+body .hero p {
+  font-size: 1.12em;
+}
+
+body .home-bg-hero {
+  background-image: url("/Assets/Images/2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  min-height: 600px;
+}
