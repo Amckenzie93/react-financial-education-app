@@ -4,7 +4,7 @@ body {
 }
 
 body #root .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 9999;
   width: 100%;
@@ -24,6 +24,45 @@ body #root .navbar a.nav-link {
 body #root .navbar a.nav-link:hover {
   border-top: 1px solid;
   border-bottom: 1px solid;
+}
+
+body .min-height-100vh {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body .max-width-170px {
+  max-width: 170px;
+  width: 100%;
+}
+
+body .border-radius-5 {
+  border-radius: 5px;
+}
+
+body .margin-top-120px {
+  margin-top: 120px;
+}
+
+body .margin-top-84px {
+  margin-top: 84px;
+}
+
+body .margin-top-48px {
+  margin-top: 48px;
+}
+
+body .margin-bottom-84px {
+  margin-bottom: 84px;
+}
+
+body .padding-bottom-84px {
+  padding-bottom: 84px;
+}
+
+body .padding-verticle-84px {
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 body .v-align {
@@ -46,12 +85,12 @@ body .btn {
   padding: .75rem 1.5rem;
 }
 
-body .hero h1 {
+body h1 {
   font-size: 4em;
   font-weight: bold;
 }
 
-body .hero p {
+body p {
   font-size: 1.12em;
 }
 

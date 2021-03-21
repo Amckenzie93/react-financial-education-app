@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import UserDetails from "../Components/UserDetails.js";
+import { motion } from "framer-motion";
 
 class budgetingPage extends React.Component {
   state = {};
@@ -20,14 +20,19 @@ class budgetingPage extends React.Component {
 
     return (
       <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={tansition1}
-      transition={{duration:0.42}}
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={tansition1}
+        transition={{ duration: 0.42 }}
       >
         <React.Fragment>
-          <UserDetails />
+          <div className="text-black min-height-100vh">
+            <div className="padding-verticle-84px">
+              <div className="margin-top-84px"></div>
+              <UserDetails />
+            </div>
+          </div>
         </React.Fragment>
       </motion.div>
     );

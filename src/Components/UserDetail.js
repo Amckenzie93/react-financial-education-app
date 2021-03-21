@@ -23,7 +23,7 @@ class UserDetail extends React.Component {
       this.state.savings = localStorage.getItem("savings");
       this.state.savingsRate = localStorage.getItem("savingsRate");
       return (
-        <div className="container py-5 px-5 my-5 card">
+        <div className="container py-5 px-5 card">
           <div className="row">
             <div className="col-12 col-md">
               <h2>Hello {this.state.userName}, welcome back</h2>
@@ -35,11 +35,11 @@ class UserDetail extends React.Component {
       );
     } else {
       return (
-        <div className="container py-5 px-5 my-5 card">
+        <div className="container py-5 px-5 card">
           <h2>Financial Details</h2>
           <p>Please take time to fill out the form below as accuratly as possible to allow for an optimal tailored experience to your situation.</p>
            <div className="alert alert-warning" role="alert">
-           <p className="mb-0">All of your personal data will be stored on your device, we will not see or save any of your data.</p></div>
+           <p className="mb-0">All personal data will only be stored on your device - we will not see or save any of your data.</p></div>
           <div className="row">
             <form className="col-12 col-md" onSubmit={this.handleSubmit}>
               

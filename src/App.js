@@ -1,18 +1,16 @@
-//React libraries
-import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-//Components
-import Header from "./sharedPages/Header.js";
-import Footer from "./sharedPages/Footer.js";
-
-//Pages
-import HomePage from "./pages/homePage.js";
+import AboutPage from "./pages/aboutPage.js";
 import BudgetingPage from "./pages/budgetingPage.js";
 import EducationPage from "./pages/educationPage.js";
-import AboutPage from "./pages/aboutPage.js";
-
+import Footer from "./sharedPages/Footer.js";
+//Components
+import Header from "./sharedPages/Header.js";
+//Pages
+import HomePage from "./pages/homePage.js";
+//React libraries
+import React from "react";
 
 class BudgetApplicaion extends React.Component {
   state = {
@@ -27,7 +25,7 @@ class BudgetApplicaion extends React.Component {
           <Header />
         </React.Fragment>
 
-        <div id="MainContent">
+        <div id="MainContent" className="bg-purple-grad">
           <AnimatePresence exitBeforeEnter>
             <Switch>
               <Route path="/" exact component={HomePage}></Route>
