@@ -9,7 +9,7 @@ body {
         // }
 
         .navbar{
-            position: absolute;
+            position: fixed;
             top:0;
             z-index: 9999;
             width: 100%;
@@ -31,6 +31,44 @@ body {
         }
     }
 
+.min-height-100vh{
+    min-height:100vh;
+    height:100%;
+}
+
+.max-width-170px{
+    max-width:170px;
+    width: 100%;
+}
+
+.border-radius-5{
+    border-radius:5px;
+}
+
+.margin-top-120px{
+    margin-top:120px;
+}
+
+.margin-top-84px{
+    margin-top:84px;
+}
+
+.margin-top-48px{
+    margin-top:48px;
+}
+
+.margin-bottom-84px{
+    margin-bottom:84px;
+}
+
+.padding-bottom-84px{
+    padding-bottom:84px;
+}
+
+.padding-verticle-84px{
+    padding-top:84px;
+    padding-bottom:84px;
+}
 
 .v-align{
     position: relative;
@@ -48,12 +86,13 @@ background: radial-gradient(circle, rgba(67,45,255,1) 36%, rgba(53,2,153,1) 100%
 }
 
 
+
+
 .btn{
     padding: .75rem 1.5rem;
 }
 
 
-.hero{
     h1{
         font-size:4em;
         font-weight:bold;
@@ -61,7 +100,6 @@ background: radial-gradient(circle, rgba(67,45,255,1) 36%, rgba(53,2,153,1) 100%
     p{
         font-size:1.12em;
     }
-}
 
 .home-bg-hero{
     background-image:url("/Assets/Images/2.webp");

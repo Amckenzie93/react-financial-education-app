@@ -5,6 +5,11 @@
       "taskLabel": "task-main",
       "appliesTo": "public/Assets/Styles/SASS/main.scss",
       "type": "launch"
+    },
+    {
+      "taskLabel": "task-main",
+      "appliesTo": "public/Assets/Styles/SASS/main.scss",
+      "type": "launch"
     }
   ]
 }
