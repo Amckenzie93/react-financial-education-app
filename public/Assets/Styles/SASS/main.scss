@@ -4,7 +4,7 @@
 body {
     font: $font-size;
     color: $primary-color;
-    #root{
+    #root{      
         // #MainContent {
         // }
 
@@ -17,6 +17,10 @@ body {
             top:0;
             background: #0000004d;
 
+            .collapse, .navbar-toggler {
+                z-index:998;
+            }
+
             a.nav-link{
             color:#fff;   
             padding: 0.1em;
@@ -28,7 +32,44 @@ body {
                     border-bottom:1px solid;
                 }
             }
+
+            .glossOver{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 80px;
+                width: 100%;
+                filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                backdrop-filter: blur(4px);
+                z-index: 0;
+            }
         }
+
+        footer{
+            color:#fff;
+            > div{
+                padding: 3em 0em;
+                a{
+                    color:#fff;
+                }
+            }
+        }
+
+
+
+.infoCard{
+    cursor:pointer;
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        -webkit-box-shadow: 0px 0px 16px 10px rgba(0,0,0,0.35);
+        -moz-box-shadow: 0px 0px 16px 10px rgba(0,0,0,0.35);
+        box-shadow: 0px 0px 16px 10px rgba(0,0,0,0.35);
+    }
+}
+
+
+
     }
 
 .min-height-100vh{
@@ -57,8 +98,32 @@ body {
     margin-top:48px;
 }
 
+.margin-top-64px{
+    margin-top:64px;
+}
+
 .margin-bottom-84px{
     margin-bottom:84px;
+}
+
+.margin-bottom-64px{
+    margin-bottom:64px;
+}
+
+.margin-bottom-48px{
+    margin-bottom:48px;
+}
+
+.margin-bottom-42px{
+    margin-bottom:42px;
+}
+
+.margin-bottom-36px{
+    margin-bottom:36px;
+}
+
+.margin-bottom-28px{
+    margin-bottom:28px;
 }
 
 .padding-bottom-84px{
@@ -74,6 +139,13 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+
+.bg-shadow-up{
+    box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
+-moz-box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
 }
 
 .bg-purple-grad{

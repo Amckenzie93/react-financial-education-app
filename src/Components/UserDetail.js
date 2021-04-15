@@ -1,4 +1,6 @@
+import LineCharts from "../Components/LineCharts.js";
 import React from "react";
+import { motion } from "framer-motion";
 
 class UserDetail extends React.Component {
   constructor() {
@@ -7,30 +9,70 @@ class UserDetail extends React.Component {
       userName: null,
       salary: null,
       savings: null,
-      savingsRate: null
+      savingsRate: null,
+      savingsFreq:null,
+      savingsRateAmountPer: null,
     };
   }
 
   render() {
+    const tansition1 = {
+      in: {
+        opacity: 1,
+        y:"0%"
+      },
+      out: {
+        opacity: 0,
+        y:"100%"
+      },
+    };
+
+    if(localStorage.getItem("userName") != null){
+      this.state.userName = localStorage.getItem("userName");
+    }
+
     if (
       localStorage.getItem("Salary") != null &&
       localStorage.getItem("userName") != null &&
       localStorage.getItem("savings") != null &&
-      localStorage.getItem("savingsRate") != null
-    ) {
+      localStorage.getItem("savingsRate") != null &&
+      localStorage.getItem("savingsFreq") != null &&
+      localStorage.getItem("savingsRateAmountPer") != null
+    ){    
       this.state.salary = localStorage.getItem("Salary");
       this.state.userName = localStorage.getItem("userName");
       this.state.savings = localStorage.getItem("savings");
       this.state.savingsRate = localStorage.getItem("savingsRate");
+      this.state.savingsFreq = localStorage.getItem("savingsFreq");
+      this.state.savingsRateAmountPer = localStorage.getItem("savingsRateAmountPer");
+
+      debugger;
+      let oneYear = parseInt(this.state.savings) + (this.state.savingsRateAmountPer * 12);
+      let oneYearInteres = oneYear/100*this.state.savingsRate;
+
       return (
+        <div>
         <div className="container py-5 px-5 card">
           <div className="row">
             <div className="col-12 col-md">
-              <h2>Hello {this.state.userName}, welcome back</h2>
-              <h3>Your salary is £{this.state.salary}</h3>
-              <h3>Your savings are £{this.state.savings} at the rate of {this.state.savingsRate}% per year</h3>
+              <h1 className="mb-2">Hello {this.state.userName},</h1>
+              <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
+              <h4 className="mb-2">Your salary is £{this.state.salary} per year</h4>
+              <h4 className="mb-2">Your current savings are £{this.state.savings} </h4>
+              <h4 className="mb-2">Your current interest rate is {this.state.savingsRate}% per year </h4>
+              <h4 className="mb-2">You put away £{this.state.savingsRateAmountPer} per {this.state.savingsFreq}</h4>
+              <h4>One year from you will have saved £{oneYear + oneYearInteres} </h4>
             </div>
           </div>
+        </div>
+        <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={tansition1}
+        transition={{ duration: 0.82 }}>
+        <LineCharts/>
+        </motion.div>
         </div>
       );
     } else {
@@ -45,7 +87,7 @@ class UserDetail extends React.Component {
               
               <div className="form-group">
                 <label className="form-text "htmlFor="username">Name </label>
-                <input className="form-control" id="username" name="username" type="text" />
+                <input className="form-control" id="username" name="username" value={this.state.userName} type="text" />
               </div>
 
               <div className="form-group">
@@ -64,16 +106,21 @@ class UserDetail extends React.Component {
               </div>
 
               <div className="form-group">
-                <label for="savingsFreq" className="form-text">How often do you add to your savings? </label>
-                <select name="cars" id="cars" className="form-control">
-                  <option value="1">Weekly</option>
-                  <option value="2">Biweekly</option>
-                  <option value="3">Monthly</option>
-                  <option value="4">Bimonthly</option>
-                  <option value="5">Quarterly</option>
-                  <option value="6">Annually</option>
-                  <option value="7">I dont</option>
+                <label htmlFor ="savingsFreq" className="form-text">How often do you add to your savings? </label>
+                <select name="savingsFreq" id="savingsFreq" className="form-control">
+                  <option value="Weekly">Weekly</option>
+                  <option value="Biweekly">Biweekly</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Bimonthly">Bimonthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Annually">Annually</option>
+                  <option value="none">I dont</option>
                 </select>
+              </div>
+
+              <div className="form-group mb-5">
+                <label className="form-text" htmlFor ="savingsRateAmountPer">At what amount roughly?</label>
+                <input className="form-control" id="savingsRateAmountPer" name="savingsRateAmountPer" />
               </div>
 
               <button className="btn btn-primary" type="submit">Save</button>
@@ -87,17 +134,20 @@ class UserDetail extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    debugger;
     this.setState({
       userName: data.get("username"),
       salary: data.get("salary"),
       savings: data.get("savings"),
-      savings: data.get("savingsRate")
+      savings: data.get("savingsRate"),
+      savingsFreq: data.get("savingsFreq"),
+      savingsRateAmountPer: data.get("savingsRateAmountPer"),
     });
     localStorage.setItem("userName", data.get("username"));
     localStorage.setItem("Salary", data.get("salary"));
     localStorage.setItem("savings", data.get("savings"));
     localStorage.setItem("savingsRate", data.get("savingsRate"));
+    localStorage.setItem("savingsFreq", data.get("savingsFreq"));
+    localStorage.setItem("savingsRateAmountPer", data.get("savingsRateAmountPer"));
   };
 }
 
