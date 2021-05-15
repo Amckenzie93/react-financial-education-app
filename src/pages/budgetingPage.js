@@ -29,7 +29,7 @@ class budgetingPage extends React.Component {
         <React.Fragment>
           <div className="text-black min-height-100vh">
             <div className="padding-verticle-84px">
-              <div className="margin-top-84px"></div>
+              <div className="margin-top-48px"></div>
               <UserDetails />
             </div>
           </div>

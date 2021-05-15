@@ -1,5 +1,6 @@
+import { Link, NavLink } from "react-router-dom";
+
 import React from 'react';
-import {  Link, NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   render(){
@@ -51,7 +52,9 @@ class Header extends React.Component {
             </li>
           </ul>
         </div>
+        <div className="glossOver"></div>
       </nav>
+      
     );
   }
 }

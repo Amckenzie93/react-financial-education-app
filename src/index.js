@@ -1,16 +1,18 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <div>
+  <div id="topRef">
     <BrowserRouter>
-      <App />
+        <App />
     </BrowserRouter>
   </div>,
   document.getElementById("root")
+   
 );
 
 // If you want to start measuring performance in your app, pass a function
