@@ -13,7 +13,8 @@ body #root .navbar {
   background: #0000004d;
 }
 
-body #root .navbar .collapse, body #root .navbar .navbar-toggler {
+body #root .navbar .collapse,
+body #root .navbar .navbar-toggler {
   z-index: 998;
 }
 
@@ -55,6 +56,12 @@ body #root footer > div a {
   color: #fff;
 }
 
+body #root .Education .tick {
+  max-width: 150px;
+  margin: auto;
+  display: inherit;
+}
+
 body #root .infoCard {
   cursor: pointer;
   -webkit-transition: 0.3s all ease-in-out;
@@ -66,105 +73,115 @@ body #root .infoCard:hover {
   box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
 }
 
-body .min-height-100vh {
+body #root .userDetails button {
+  padding: 0.5em 1.5em;
+  min-width: 120px;
+  font-size: 16px;
+  background: #432dff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+body #root .min-height-100vh {
   min-height: 100vh;
   height: 100%;
 }
 
-body .max-width-170px {
+body #root .max-width-170px {
   max-width: 170px;
   width: 100%;
 }
 
-body .border-radius-5 {
+body #root .border-radius-5 {
   border-radius: 5px;
 }
 
-body .margin-top-120px {
+body #root .margin-top-120px {
   margin-top: 120px;
 }
 
-body .margin-top-84px {
+body #root .margin-top-84px {
   margin-top: 84px;
 }
 
-body .margin-top-48px {
+body #root .margin-top-48px {
   margin-top: 48px;
 }
 
-body .margin-top-64px {
+body #root .margin-top-64px {
   margin-top: 64px;
 }
 
-body .margin-bottom-84px {
+body #root .margin-bottom-84px {
   margin-bottom: 84px;
 }
 
-body .margin-bottom-64px {
+body #root .margin-bottom-64px {
   margin-bottom: 64px;
 }
 
-body .margin-bottom-48px {
+body #root .margin-bottom-48px {
   margin-bottom: 48px;
 }
 
-body .margin-bottom-42px {
+body #root .margin-bottom-42px {
   margin-bottom: 42px;
 }
 
-body .margin-bottom-36px {
+body #root .margin-bottom-36px {
   margin-bottom: 36px;
 }
 
-body .margin-bottom-28px {
+body #root .margin-bottom-28px {
   margin-bottom: 28px;
 }
 
-body .padding-bottom-84px {
+body #root .padding-bottom-84px {
   padding-bottom: 84px;
 }
 
-body .padding-verticle-84px {
+body #root .padding-verticle-84px {
   padding-top: 84px;
   padding-bottom: 84px;
 }
 
-body .v-align {
+body #root .v-align {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-body .bg-shadow-up {
+body #root .bg-shadow-up {
   box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
   -webkit-box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
   -moz-box-shadow: 0px -12px 13px -9px rgba(0, 0, 0, 0.65);
 }
 
-body .bg-purple-grad {
+body #root .bg-purple-grad {
   background: #432dff;
   background: radial-gradient(circle, #432dff 36%, #350299 100%);
 }
 
-body .width100 {
+body #root .width100 {
   width: 100%;
 }
 
-body .btn {
-  padding: .75rem 1.5rem;
+body #root .btn {
+  padding: 0.75rem 1.5rem;
 }
 
-body h1 {
+body #root h1 {
   font-size: 4em;
   font-weight: bold;
 }
 
-body p {
+body #root p {
   font-size: 1.12em;
 }
 
-body .home-bg-hero {
+body #root .home-bg-hero {
   background-image: url("/Assets/Images/2.webp");
   background-repeat: no-repeat;
   background-size: cover;

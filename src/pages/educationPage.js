@@ -42,8 +42,7 @@ class educationPage extends React.Component {
                       Please in your own time feel free to go through each of the offered modules 
                       listed below about general finance and how to get the upper hand in order to better yourself financially for the future.
                     </p>
-                    <br></br>
-                    <h4>you have completed 0 / 6 Lessons</h4>
+                    
                   </div>
                 </div>
                 <div className="col-lg-6 text-center">
