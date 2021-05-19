@@ -1,4 +1,4 @@
-import EduCards from "../Components/EduCards.js";
+import EduCards from "../Components/EduCardCollection.js";
 import React from 'react';
 import { motion } from "framer-motion";
 
