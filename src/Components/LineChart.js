@@ -37,10 +37,10 @@ class LineChart extends React.Component {
         <div className="py-4 px-2 bg-white border-radius-5">
           <div className="row">
             <div className="col-lg-12">
-            <h3>Estimated comparisons based on your savings input</h3>
+            <h3>Saving Method Comparison</h3>
             <Chart
-              width={'1050px'}
-              height={'500px'}
+            width="100%"
+            height={'350px'}
               chartType="LineChart"
               loader={<div>Loading Chart</div>}
               data={this.generateChartData()}

@@ -76,8 +76,8 @@ class UserDetail extends React.Component {
       localStorage.getItem("savings") != null &&
       localStorage.getItem("savingsRate") != null &&
       localStorage.getItem("savingsFreq") != null &&
-      localStorage.getItem("savingsRateAmountPer") != null
-    ){    
+      localStorage.getItem("savingsRateAmountPer") != null)
+      {    
       this.state.salary = localStorage.getItem("salary");
       this.state.userName = localStorage.getItem("userName");
       this.state.savings = localStorage.getItem("savings");
@@ -91,27 +91,29 @@ class UserDetail extends React.Component {
       if(this.state.edit == true){
         return(
           <div>
-          <div className="userDetails container py-5 px-5 card">
+          <div className="userDetails isEdit container py-5 px-5 card">
             <div className="row">
               <div className="col-12 col-md">
                 <h1 className="mb-2">Hello {this.state.userName},</h1>
                 <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
-                <h4 className="mb-2">salary £ <input type="number" name="salary" onChange={this.onInputchange} value={this.state.salary} />per year</h4>
-                <h4 className="mb-2">savings £<input type="number" name="savings" onChange={this.onInputchange} value={this.state.savings} /> in total</h4>
-                <h4 className="mb-2">Interest rate <input type="number" name="savingsRate" onChange={this.onInputchange} value={this.state.savingsRate}/>%</h4>
-                <h4 className="mb-2">You put away £ <input type="number" name="savingsRateAmountPer" onChange={this.onInputchange} value={this.state.savingsRateAmountPer} /> per 
-                 <select name="savingsFreq" id="savingsFreq" onChange={this.onInputchange} className="">
-                  <option value="Weekly">Weekly</option>
-                  <option value="Biweekly">Biweekly</option>
-                  <option value="Monthly">Monthly</option>
-                  <option value="Bimonthly">Bimonthly</option>
-                  <option value="Quarterly">Quarterly</option>
-                  <option value="Annually">Annually</option>
-                  <option value="none">I dont</option>
-                </select>
-                </h4>
+                <ul>
+                  <li className="mb-2">salary £ <input type="number" name="salary" onChange={this.onInputchange} value={this.state.salary} /> per year</li>
+                  <li className="mb-2">savings £ <input type="number" name="savings" onChange={this.onInputchange} value={this.state.savings} /> in total</li>
+                  <li className="mb-2">Interest rate <input type="number" name="savingsRate" onChange={this.onInputchange} value={this.state.savingsRate}/> %</li>
+                  <li className="mb-2">You put away £ <input type="number" name="savingsRateAmountPer" onChange={this.onInputchange} value={this.state.savingsRateAmountPer} /> per&nbsp; 
+                    <select name="savingsFreq" id="savingsFreq" onChange={this.onInputchange} className="">
+                      <option value="Weekly">Weekly</option>
+                      <option value="Biweekly">Biweekly</option>
+                      <option value="Monthly">Monthly</option>
+                      <option value="Bimonthly">Bimonthly</option>
+                      <option value="Quarterly">Quarterly</option>
+                      <option value="Annually">Annually</option>
+                      <option value="none">I dont</option>
+                    </select>
+                  </li>
+                </ul>
                 <br></br>
-                <button onClick={this.closeEdit}>Close</button>
+                <button onClick={this.closeEdit}>Save</button>
 
               </div>
             </div>
@@ -135,11 +137,13 @@ class UserDetail extends React.Component {
               <div className="col-12 col-md">
                 <h1 className="mb-2">Hello {this.state.userName},</h1>
                 <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
-                <h4 className="mb-2">Your salary is £{this.state.salary} per year</h4>
-                <h4 className="mb-2">Your current savings are £{this.state.savings} </h4>
-                <h4 className="mb-2">Your current interest rate is {this.state.savingsRate}% per year </h4>
-                <h4 className="mb-2">You put away £{this.state.savingsRateAmountPer} per {this.state.savingsFreq}</h4>
-                <h4>One year from you will have saved £{oneYear + oneYearInteres} </h4>
+                <ul>
+                  <li className="mb-2">Your salary is £{this.state.salary} per year</li>
+                  <li className="mb-2">Your current savings are £{this.state.savings} </li>
+                  <li className="mb-2">Your current interest rate is {this.state.savingsRate}% per year </li>
+                  <li className="mb-2">You put away £{this.state.savingsRateAmountPer} per {this.state.savingsFreq}</li>
+                  <li>One year from you will have saved £{oneYear + oneYearInteres} </li>
+                </ul>
                 <br></br>
                 <button onClick={this.openEdit}>Edit</button>
               </div>
@@ -156,32 +160,6 @@ class UserDetail extends React.Component {
           </div>
         )
       }
-
-      // return (
-      //   <div>
-      //   <div className="container py-5 px-5 card">
-      //     <div className="row">
-      //       <div className="col-12 col-md">
-      //         <h1 className="mb-2">Hello {this.state.userName},</h1>
-      //         <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
-      //         <h4 className="mb-2">Your salary is £{this.state.salary} per year</h4>
-      //         <h4 className="mb-2">Your current savings are £{this.state.savings} </h4>
-      //         <h4 className="mb-2">Your current interest rate is {this.state.savingsRate}% per year </h4>
-      //         <h4 className="mb-2">You put away £{this.state.savingsRateAmountPer} per {this.state.savingsFreq}</h4>
-      //         <h4>One year from you will have saved £{oneYear + oneYearInteres} </h4>
-      //       </div>
-      //     </div>
-      //   </div>
-      //   <motion.div
-      //   initial="out"
-      //   animate="in"
-      //   exit="out"
-      //   variants={tansition1}
-      //   transition={{ duration: 0.82 }}>
-      //   <LineCharts/>
-      //   </motion.div>
-      //   </div>
-      // );
     } 
     else {
       return (

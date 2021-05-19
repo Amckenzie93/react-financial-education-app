@@ -99,21 +99,6 @@ class HomePage extends React.Component {
             </div>
           </div>
 
-          <div className="container pb-5 pb-5 mb-5">
-          <hr></hr>
-          <div className="row my-5 text-center">
-            <div className="col-lg-12 col-md">
-              <h2>Some introduction about content explaining the purpose</h2>
-              <p>
-                {" "}
-                Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                euismod. Nullam id dolor id nibh.
-              </p>
-              <img className="mt-4" src="./Assets/Images/1.webp" width="100%" />
-            </div>
-          </div>
-        </div>
-
         </div>
         </motion.div>
 
