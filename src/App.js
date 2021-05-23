@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-//React libraries
 import React, { useEffect, useRef } from 'react';
 import { Route, Switch } from "react-router-dom";
 
@@ -9,6 +8,17 @@ import EducationPage from "./pages/educationPage.js";
 import Footer from "./sharedPages/Footer.js";
 import Header from "./sharedPages/Header.js";
 import HomePage from "./pages/homePage.js";
+
+//React libraries
+
+
+
+
+
+
+
+
+
 
 class BudgetApplicaion extends React.Component { 
   

@@ -1,7 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
+import { animatePresence, motion } from "framer-motion";
 
-class aboutPage extends React.Component {
+import Heros from "../Components/Heros";
+import React from "react";
+
+class AboutPage extends React.Component {
   state = {};
 
   componentDidMount(){
@@ -9,16 +12,103 @@ class aboutPage extends React.Component {
   }
 
   render() {
+    const tansition1 = {
+      in: {
+        opacity: 1,
+        y: "0%",
+      },
+      out: {
+        opacity: 0,
+        y: "100%",
+      },
+    };
+
     return (
       <motion.div
-      initial={{ opacity: 0, left: "-100%", position: "relative" }}
-      animate={{ opacity: 1, left:0, position: "relative" }}
-      exit={{ opcaity: 0, left: "150%", position: "relative" }}
-      transition={{duration:0.42}}
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={tansition1}
+        transition={{ duration: 0.62 }}
       >
-     about</motion.div>
+        <Heros/>
+
+        <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={tansition1}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="bg-white bg-shadow-up pt-1">
+          <div className="container py-5 px-5 mt-5">
+            <div className="row text-center">
+              <div className="col-lg-4">
+                <h2 className="mb-4">Education</h2>
+                <img
+                  className="mb-4 max-width-170px"
+                  src="./Assets/Images/book.svg"
+                />
+                <p className="mb-4">
+                  Donec sed odio dui. Etiam porta sem malesuada magna mollis
+                  euismod. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit.
+                </p>
+                <p>
+                  <NavLink
+                    className="btn btn-primary mt-2"
+                    to="/education"
+                    role="button"
+                  >
+                    View details »
+                  </NavLink>
+                </p>
+              </div>
+
+              <div className="col-lg-4">
+                <h2 className="mb-4">Budgeting</h2>
+                <img
+                  className="mb-4 max-width-170px"
+                  src="./Assets/Images/growthSvg.svg"
+                />
+                <p className="mb-5">
+                  Donec sed odio dui. Etiam porta sem malesuada magna mollis
+                  euismod. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit.
+                </p>
+                <p>
+                  <a className="btn btn-primary" href="#" role="button">
+                    View details »
+                  </a>
+                </p>
+              </div>
+
+              <div className="col-lg-4">
+                <h2 className="mb-4">About</h2>
+                <img
+                  className="mb-4 max-width-170px"
+                  src="./Assets/Images/me.svg"
+                />
+                <p className="mb-5">
+                  Donec sed odio dui. Etiam porta sem malesuada magna mollis
+                  euismod. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit.
+                </p>
+                <p>
+                  <a className="btn btn-primary mt-1" href="#" role="button">
+                    View details »
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </motion.div>
+
+      </motion.div>
     );
   }
 }
 
-export default aboutPage;
+export default AboutPage;
