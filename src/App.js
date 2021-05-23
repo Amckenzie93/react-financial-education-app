@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-//React libraries
 import React, { useEffect, useRef } from 'react';
 import { Route, Switch } from "react-router-dom";
 
@@ -39,7 +38,5 @@ class BudgetApplicaion extends React.Component {
 
   }
 }
-
-
 
 export default BudgetApplicaion;
