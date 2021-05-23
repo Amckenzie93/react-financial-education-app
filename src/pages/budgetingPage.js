@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 class budgetingPage extends React.Component {
   state = {};
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   render() {
 
     const tansition1 = {

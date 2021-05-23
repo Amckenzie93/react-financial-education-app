@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 class aboutPage extends React.Component {
   state = {};
+
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
 
   render() {
     return (

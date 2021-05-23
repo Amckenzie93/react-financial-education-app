@@ -7,6 +7,9 @@ class educationPage extends React.Component {
     userName: localStorage.getItem("userName"),
   };
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
   
   render() {
     const tansition1 = {
