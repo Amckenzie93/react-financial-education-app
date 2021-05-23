@@ -9,17 +9,6 @@ import Footer from "./sharedPages/Footer.js";
 import Header from "./sharedPages/Header.js";
 import HomePage from "./pages/homePage.js";
 
-//React libraries
-
-
-
-
-
-
-
-
-
-
 class BudgetApplicaion extends React.Component { 
   
   componentDidMount() {
@@ -49,7 +38,5 @@ class BudgetApplicaion extends React.Component {
 
   }
 }
-
-
 
 export default BudgetApplicaion;
