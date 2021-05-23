@@ -7,6 +7,10 @@ import React from "react";
 class HomePage extends React.Component {
   state = {};
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   render() {
     const tansition1 = {
       in: {
