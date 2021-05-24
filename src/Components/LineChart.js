@@ -1,4 +1,5 @@
 import Chart from "react-google-charts";
+import { DataHandler } from "../Services/clientDataHandler"
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -16,28 +17,21 @@ class LineChart extends React.Component {
     };
   }
 
+
   render() {
-    if (
-      localStorage.getItem("salary") != null &&
-      localStorage.getItem("userName") != null &&
-      localStorage.getItem("savings") != null &&
-      localStorage.getItem("savingsRate") != null &&
-      localStorage.getItem("savingsFreq") != null &&
-      localStorage.getItem("savingsRateAmountPer") != null
-    ){    
-      this.state.salary = localStorage.getItem("salary");
-      this.state.userName = localStorage.getItem("userName");
-      this.state.savings = localStorage.getItem("savings");
-      this.state.savingsRate = localStorage.getItem("savingsRate");
-      this.state.savingsFreq = localStorage.getItem("savingsFreq");
-      this.state.savingsRateAmountPer = localStorage.getItem("savingsRateAmountPer");
+
+    let dataHandlerService = DataHandler.getInstance();
+    const data = dataHandlerService.getAllData();
+    debugger;
+    if (dataHandlerService.validateAll(data)){    
+      this.setState();
 
       return (
         <div className="container py-3 px-3 mt-5 card margin-bottom-36px">
         <div className="py-4 px-2 bg-white border-radius-5">
           <div className="row">
             <div className="col-lg-12">
-            <h3>Saving Method Comparison</h3>
+            <h2>Saving Method Comparison</h2>
             <Chart
             width="100%"
             height={'350px'}
@@ -65,8 +59,11 @@ class LineChart extends React.Component {
     }
     else{
       return (
-        <div className="container py-3 px-3 mt-5 card margin-bottom-36px">no data</div>
-          );
+        <div className="container py-3 px-3 mt-5 card margin-bottom-36px">
+          <h2>Saving Method Comparison</h2>
+          no data
+        </div>
+      );
         
     }
   }
@@ -135,6 +132,17 @@ class LineChart extends React.Component {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
   };
+
+  setState(){
+    this.state.salary = localStorage.getItem("salary");
+      this.state.userName = localStorage.getItem("userName");
+      this.state.savings = localStorage.getItem("savings");
+      this.state.savingsRate = localStorage.getItem("savingsRate");
+      this.state.savingsFreq = localStorage.getItem("savingsFreq");
+      this.state.savingsRateAmountPer = localStorage.getItem(
+        "savingsRateAmountPer"
+      );
+  }
 
 }
 
