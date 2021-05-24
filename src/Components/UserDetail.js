@@ -12,12 +12,11 @@ class UserDetail extends React.Component {
       savingsRate: null,
       savingsFreq:null,
       savingsRateAmountPer: null,
-      edit: false,
+      // edit: false,
     };
     this.onInputchange = this.onInputchange.bind(this);
-    this.closeEdit = this.closeEdit.bind(this);
-    this.openEdit = this.openEdit.bind(this);
-  
+    // this.closeEdit = this.closeEdit.bind(this);
+    // this.openEdit = this.openEdit.bind(this);
   }
 
   onInputchange(event) {
@@ -30,17 +29,17 @@ class UserDetail extends React.Component {
     debugger;
   }
 
-  closeEdit() {
-    this.setState({
-      edit : false
-    });
-  }
+  // closeEdit() {
+  //   this.setState({
+  //     edit : false
+  //   });
+  // }
 
-  openEdit() {
-    this.setState({
-      edit : true
-    });
-  }
+  // openEdit() {
+  //   this.setState({
+  //       : true
+  //   });
+  // }
 
   render() {
     const tansition1 = {
@@ -61,12 +60,6 @@ class UserDetail extends React.Component {
     }
   }
 
-
-
-
-    // if(localStorage.getItem("userName") != null){
-    //   this.state.userName = localStorage.getItem("userName");
-    // }
 
     try{
       this.state.salary = localStorage.getItem("salary");
@@ -151,27 +144,27 @@ class UserDetail extends React.Component {
               
               <div className="form-group">
                 <label className="form-text "htmlFor="username">Name </label>
-                <input className="form-control" id="username" name="username" value={this.state.userName} onChange={this.onInputchange}  type="text" />
+                <input className="form-control" required id="username" name="username" value={this.state.userName} onChange={this.onInputchange}  type="text" />
               </div>
 
               <div className="form-group">
                 <label className="form-text" htmlFor="salary">Salary </label>
-                <input className="form-control" id="salary" name="salary" type="number" />
+                <input className="form-control" required id="salary" name="salary" type="number" />
               </div>
 
               <div className="form-group">
                 <label className="form-text" htmlFor="savings">Savings </label>
-                <input className="form-control" id="savings" name="savings" type="number" />
+                <input className="form-control" required id="savings" name="savings" type="number" />
               </div>
 
               <div className="form-group">
                 <label className="form-text" htmlFor="savingsRate">Savings rate (%) </label>
-                <input className="form-control" id="savingsRate" name="savingsRate" />
+                <input className="form-control" required id="savingsRate" name="savingsRate" />
               </div>
 
               <div className="form-group">
                 <label htmlFor ="savingsFreq" className="form-text">How often do you add to your savings? </label>
-                <select name="savingsFreq" id="savingsFreq" className="form-control">
+                <select name="savingsFreq" id="savingsFreq" required className="form-control">
                   <option value="Weekly">Weekly</option>
                   <option value="Biweekly">Biweekly</option>
                   <option value="Monthly">Monthly</option>
@@ -184,7 +177,7 @@ class UserDetail extends React.Component {
 
               <div className="form-group mb-5">
                 <label className="form-text" htmlFor ="savingsRateAmountPer">At what amount roughly?</label>
-                <input className="form-control" id="savingsRateAmountPer" name="savingsRateAmountPer" />
+                <input className="form-control" required id="savingsRateAmountPer" name="savingsRateAmountPer" />
               </div>
 
               <button className="btn btn-primary" type="submit">Save</button>
