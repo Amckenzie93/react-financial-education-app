@@ -54,6 +54,16 @@ class UserDetail extends React.Component {
       },
     };
 
+
+    const inputWarning = () => {
+      if (this.state.savings.toString() == "" || this.state.savingsRate.toString() == "") {
+        return <div>Please fill in more for dashboard to work</div>;
+    }
+  }
+
+
+
+
     // if(localStorage.getItem("userName") != null){
     //   this.state.userName = localStorage.getItem("userName");
     // }
@@ -88,7 +98,6 @@ class UserDetail extends React.Component {
       let oneYear = parseInt(this.state.savings) + (this.state.savingsRateAmountPer * 12);
       let oneYearInteres = oneYear/100*this.state.savingsRate;
 
-      if(this.state.edit == true){
         return(
           <div>
           <div className="userDetails isEdit container py-5 px-5 card">
@@ -96,11 +105,11 @@ class UserDetail extends React.Component {
               <div className="col-12 col-md">
                 <h1 className="mb-2">Hello {this.state.userName},</h1>
                 <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
+                {inputWarning()}
                 <ul>
-                  <li className="mb-2">salary £ <input type="number" name="salary" onChange={this.onInputchange} value={this.state.salary} /> per year</li>
-                  <li className="mb-2">savings £ <input type="number" name="savings" onChange={this.onInputchange} value={this.state.savings} /> in total</li>
-                  <li className="mb-2">Interest rate <input type="number" name="savingsRate" onChange={this.onInputchange} value={this.state.savingsRate}/> %</li>
-                  <li className="mb-2">You put away £ <input type="number" name="savingsRateAmountPer" onChange={this.onInputchange} value={this.state.savingsRateAmountPer} /> per&nbsp; 
+                  <li className="mb-2">My Salary £ <input type="number" name="salary" onChange={this.onInputchange} value={this.state.salary} /> per year</li>
+                  <li className="mb-2">My Savings £ <input type="number" name="savings" onChange={this.onInputchange} value={this.state.savings} /> in total</li>
+                  <li className="mb-2">I put away £ <input type="number" name="savingsRateAmountPer" onChange={this.onInputchange} value={this.state.savingsRateAmountPer} /> per&nbsp; 
                     <select name="savingsFreq" id="savingsFreq" onChange={this.onInputchange} className="">
                       <option value="Weekly">Weekly</option>
                       <option value="Biweekly">Biweekly</option>
@@ -111,9 +120,10 @@ class UserDetail extends React.Component {
                       <option value="none">I dont</option>
                     </select>
                   </li>
+                  <li className="mb-2">Interest rate <input type="number" name="savingsRate" onChange={this.onInputchange} value={this.state.savingsRate}/> %</li>
                 </ul>
                 <br></br>
-                <button onClick={this.closeEdit}>Save</button>
+                <button onClick={this.closeEdit}>Calculate</button> 	&nbsp;- Stock market predicitons can change
 
               </div>
             </div>
@@ -128,38 +138,6 @@ class UserDetail extends React.Component {
           </motion.div>
           </div>
         )
-      }
-      else{
-        return(
-          <div>
-          <div className="userDetails container py-5 px-5 card">
-            <div className="row">
-              <div className="col-12 col-md">
-                <h1 className="mb-2">Hello {this.state.userName},</h1>
-                <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
-                <ul>
-                  <li className="mb-2">Your salary is £{this.state.salary} per year</li>
-                  <li className="mb-2">Your current savings are £{this.state.savings} </li>
-                  <li className="mb-2">Your current interest rate is {this.state.savingsRate}% per year </li>
-                  <li className="mb-2">You put away £{this.state.savingsRateAmountPer} per {this.state.savingsFreq}</li>
-                  <li>One year from you will have saved £{oneYear + oneYearInteres} </li>
-                </ul>
-                <br></br>
-                <button onClick={this.openEdit}>Edit</button>
-              </div>
-            </div>
-          </div>
-          <motion.div
-          initial="out"
-          animate="in"
-          exit="out"
-          variants={tansition1}
-          transition={{ duration: 0.82 }}>
-          <LineCharts/>
-          </motion.div>
-          </div>
-        )
-      }
     } 
     else {
       return (
