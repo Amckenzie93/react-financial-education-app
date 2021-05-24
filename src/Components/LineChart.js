@@ -84,16 +84,16 @@ class LineChart extends React.Component {
     let isaSavingsInterest = 0;
     let isaSavingstotal = isaSavings;
 
-    for(var i = 0; i < years; i++)
+    for(var i = 0; i < years; i++) 
     {
       //standard savings
-      savings += this.state.savingsRateAmountPer * 12;
+      savings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
       savingsInterest = savings/100*this.state.savingsRate;
       savingstotal = savings + savingsInterest;
 
       //Stocks
       var YearsInterest = this.getRandomInt(-7, 15);
-      isaSavings += this.state.savingsRateAmountPer * 12;
+      isaSavings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
       isaSavingsInterest = isaSavings/100*YearsInterest;
       isaSavingstotal = isaSavings + isaSavingsInterest;
 
@@ -104,6 +104,31 @@ class LineChart extends React.Component {
 
     return chartData;
   };
+
+  savingFrequency(value) {
+    switch (value) {
+      case "Weekly":
+        return 52
+        break;
+      case "Biweekly":
+        return 26
+        break;
+      case "Monthly":
+        return 12
+        break;
+      case "Bimonthly":
+        return 6
+        break;
+      case "Quarterly":
+        return 4
+        break;
+      case "Annually":
+        return 1
+        break;
+      default:
+        return 0;
+    }
+  }
 
   getRandomInt = (min, max) => {
     min = Math.ceil(min);
