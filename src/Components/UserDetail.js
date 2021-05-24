@@ -105,7 +105,7 @@ class UserDetail extends React.Component {
               <div className="col-12 col-md">
                 <h1 className="mb-2">Hello {this.state.userName},</h1>
                 <h3 className="mb-4">Listed below is your financial budgeting break down</h3>
-                {inputWarning()}
+                {inputWarning()} 
                 <ul>
                   <li className="mb-2">My Salary £ <input type="number" name="salary" onChange={this.onInputchange} value={this.state.salary} /> per year</li>
                   <li className="mb-2">My Savings £ <input type="number" name="savings" onChange={this.onInputchange} value={this.state.savings} /> in total</li>

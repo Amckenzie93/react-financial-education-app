@@ -84,7 +84,7 @@ class LineChart extends React.Component {
     let isaSavingsInterest = 0;
     let isaSavingstotal = isaSavings;
 
-    for(var i = 0; i < years; i++)
+    for(var i = 0; i < years; i++) 
     {
       //standard savings
       savings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
