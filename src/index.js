@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <div id="topRef">
-    <BrowserRouter>
+    <BrowserRouter> -- react browser router wrapper - so anything inside can use browser routing so page doesnt refresh.
         <App />
     </BrowserRouter>
   </div>,

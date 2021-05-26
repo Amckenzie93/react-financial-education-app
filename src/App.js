@@ -22,8 +22,8 @@ class BudgetApplicaion extends React.Component {
           <Header />
           <div id="MainContent" className="bg-purple-grad">
             <AnimatePresence exitBeforeEnter>
-              <Switch>
-                <Route path="/" exact component={HomePage}></Route>
+              <Switch> -- react router dom switch to allow us to access each route within the dom to minic page changes without reloading the page or the app.
+                <Route path="/" exact component={HomePage}></Route> -- can define what pages and or components to use as a path - defining what the URL will show.
                 <Route path="/education" exact component={EducationPage}></Route>
                 <Route path="/budgeting" exact component={BudgetingPage}></Route>
                 <Route path="/about" exact component={AboutPage}></Route>
