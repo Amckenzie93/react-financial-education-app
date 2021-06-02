@@ -3,15 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import React from 'react';
 
 class Header extends React.Component {
+  
   render(){
-    
+
     return (
-
-
       <nav className="navbar navbar-expand-lg navbar-dark">
-        <Link className="navbar-brand" to="/">
-         
-        </Link>
+        <script scr="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <Link className="navbar-brand" to="/"></Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -54,9 +52,10 @@ class Header extends React.Component {
         </div>
         <div className="glossOver"></div>
       </nav>
-      
     );
   }
+
+  
 }
 
 export default Header;

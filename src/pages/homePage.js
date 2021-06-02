@@ -3,6 +3,7 @@ import { animatePresence, motion } from "framer-motion";
 
 import Heros from "../Components/Heros";
 import React from "react";
+import Transitions from "../utility/transitions"
 
 class HomePage extends React.Component {
   state = {};
@@ -12,34 +13,25 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const tansition1 = {
-      in: {
-        opacity: 1,
-        y: "0%",
-      },
-      out: {
-        opacity: 0,
-        y: "100%",
-      },
-    };
+
+    let transition = Transitions.getInstance();
 
     return (
       <motion.div
         initial="out"
         animate="in"
         exit="out"
-        variants={tansition1}
-        transition={{ duration: 0.62 }}
-      >
+        variants={transition.getTransition()}
+        transition={{ duration: 0.62 }}>
+        
         <Heros/>
 
         <motion.div
         initial="out"
         animate="in"
         exit="out"
-        variants={tansition1}
-        transition={{ duration: 0.9 }}
-      >
+        variants={transition.getTransition()}
+        transition={{ duration: 0.9 }}>
         <div className="bg-white bg-shadow-up pt-1">
           <div className="container py-5 px-5 mt-5">
             <div className="row text-center">
@@ -64,7 +56,6 @@ class HomePage extends React.Component {
                   </NavLink>
                 </p>
               </div>
-
               <div className="col-lg-4">
                 <h2 className="mb-4">Budgeting</h2>
                 <img
@@ -82,7 +73,6 @@ class HomePage extends React.Component {
                   </a>
                 </p>
               </div>
-
               <div className="col-lg-4">
                 <h2 className="mb-4">About</h2>
                 <img
@@ -102,13 +92,10 @@ class HomePage extends React.Component {
               </div>
             </div>
           </div>
-
         </div>
         </motion.div>
-
       </motion.div>
     );
   }
 }
-
 export default HomePage;

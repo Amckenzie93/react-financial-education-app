@@ -1,5 +1,7 @@
+import { DataHandler } from "../Services/clientDataHandler"
 import EduCards from "../Components/EduCardCollection.js";
 import React from 'react';
+import Transitions from "../utility/transitions"
 import { motion } from "framer-motion";
 
 class educationPage extends React.Component {
@@ -12,16 +14,12 @@ class educationPage extends React.Component {
   }
   
   render() {
-    const tansition1 = {
-      in: {
-        opacity: 1,
-        y: "0%",
-      },
-      out: {
-        opacity: 0,
-        y: "100%",
-      },
-    };
+
+    let dataHandlerService = DataHandler.getInstance();
+    const data = dataHandlerService.getAllData();
+
+    let transition = Transitions.getInstance();
+    
 
     if (this.state.userName != null) {
       return (
@@ -29,7 +27,7 @@ class educationPage extends React.Component {
           initial="out"
           animate="in"
           exit="out"
-          variants={tansition1}
+          variants={transition.getTransition()}
           transition={{ duration: 0.62 }}
         >
           <div className="Education text-black min-height-100vh padding-bottom-84px">
@@ -67,7 +65,7 @@ class educationPage extends React.Component {
           initial="out"
           animate="in"
           exit="out"
-          variants={tansition1}
+          variants={transition.getTransition()}
           transition={{ duration: 0.62 }}
         >
           <div className="Education text-black min-height-100vh padding-bottom-84px">

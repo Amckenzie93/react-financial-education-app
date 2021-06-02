@@ -1,60 +1,100 @@
 
-export class DataHandler  {
+export class DataHandler {
+  dataStore = {
+    salary: localStorage.getItem("salary"),
+    userName: localStorage.getItem("userName"),
+    savings: localStorage.getItem("savings"),
+    savingsRate: localStorage.getItem("savingsRate"),
+    savingsFreq: localStorage.getItem("savingsFreq"),
+    savingsRateAmountPer: localStorage.getItem("savingsRateAmountPer"),
+    completedLessons: localStorage.getItem("completedLessons"),
+  };
 
-    dataStore = {
-        "salary": localStorage.getItem("salary"),
-        "userName" : localStorage.getItem("userName"),
-        "savings" : localStorage.getItem("savings"),
-        "savingsRate" : localStorage.getItem("savingsRate"),
-        "savingsFreq" : localStorage.getItem("savingsFreq"),
-        "savingsRateAmountPer" : localStorage.getItem("savingsRateAmountPer")
-    };
+  static singleton = null;
 
-    static singleton = null;
-    
-    static getInstance(){
-        debugger;
-        if(DataHandler.singleton == null){
-            DataHandler.singleton = new DataHandler();
-        }
-        return this.singleton;  
-    };
-
-    getAllData = () =>{
-        return this.dataStore;
+  static getInstance() {
+    if (DataHandler.singleton == null) {
+      DataHandler.singleton = new DataHandler();
     }
+    return this.singleton;
+  }
 
-    setUsername = (value) =>{
-        localStorage.setItem("userName", value);
-    }
+  getAllData = () => {
+    return this.dataStore;
+  };
 
-    setSalary = (value) =>{
-        localStorage.setItem("salary", value);
-    }
+  
+  getUsername = () => {
+    return this.dataStore.userName;
+  };
 
-    setSavings = (value) =>{
-        localStorage.setItem("savings", value);
-    }
+  setUsername = (value) => {
+    localStorage.setItem("userName", value);
+  };
 
-    setSavingsRate = (value) =>{
-        localStorage.setItem("savingsRate", value);
-    }
+  setSalary = (value) => {
+    localStorage.setItem("salary", value);
+  };
 
-    setSavingsFreq = (value) =>{
-        localStorage.setItem("savingsFreq", value);
-    }
+  setSavings = (value) => {
+    localStorage.setItem("savings", value);
+  };
 
-    setSavingsRateAmountPer = (value) =>{
-        localStorage.setItem("savingsRateAmountPer", value);
+  setSavingsRate = (value) => {
+    localStorage.setItem("savingsRate", value);
+  };
+
+  setSavingsFreq = (value) => {
+    localStorage.setItem("savingsFreq", value);
+  };
+
+  setSavingsRateAmountPer = (value) => {
+    localStorage.setItem("savingsRateAmountPer", value);
+  };
+
+  setCompletedLessons = (value) => {
+    localStorage.setItem("completedLessons", value);
+  };
+
+  setAny(input) {
+    localStorage.setItem([input.target.name], input.target.value);
+  }
+
+  //checks all entries have data.
+  validateAll = () => {
+    for (let element in this.dataStore) {
+      if (this.dataStore[element] == null) {
+        return false;
+      }
     }
-    
-    //checks all entries have data
-    validateAll = () => {
-        for(let element in this.dataStore) {
-            if(this.dataStore[element] == ""){
-                return false;
-            }
-        };
-        return true;
+    return true;
+  };
+
+  //simple name check validator
+  validName = () =>{
+    if(this.dataStore.userName != null){
+      return true;
     }
+    return false;
+  }
+
+  //checks saving specific properties are valid.
+  validateSavings = () => {
+      if(this.dataStore.savings != null
+      && this.dataStore.savingsFreq != null
+      && this.dataStore.savingsRate != null
+      && this.dataStore.savingsRateAmountPer != null){
+          return true;
+      }
+      return false;
+  }
+
+  // setAllFormData(data){
+  //     localStorage.setItem("userName", data.get("username"));
+  //     localStorage.setItem("salary", data.get("salary"));
+  //     localStorage.setItem("savings", data.get("savings"));
+  //     localStorage.setItem("savingsRate", data.get("savingsRate"));
+  //     localStorage.setItem("savingsFreq", data.get("savingsFreq"));
+  //     localStorage.setItem("savingsRateAmountPer", data.get("savingsRateAmountPer"));
+  // }
 }

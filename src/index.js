@@ -7,8 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <div id="topRef">
-    <BrowserRouter> -- react browser router wrapper - so anything inside can use browser routing so page doesnt refresh.
-        <App />
+    <BrowserRouter> {/* react browser router wrapper - so anything inside can use browser routing so page doesnt refresh. */}
+        <App /> {/* The application dom element in the browser where react inserts all relevant code into */}
     </BrowserRouter>
   </div>,
   document.getElementById("root")
