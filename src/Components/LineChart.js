@@ -1,7 +1,6 @@
 import Chart from "react-google-charts";
 import { DataHandler } from "../Services/clientDataHandler"
 import React from "react";
-import { motion } from "framer-motion";
 
 class LineChart extends React.Component {
 
@@ -17,25 +16,33 @@ class LineChart extends React.Component {
     };
   }
 
-
   render() {
-
     let dataHandlerService = DataHandler.getInstance();
-    const data = dataHandlerService.getAllData();
-    debugger;
-    if (dataHandlerService.validateAll(data)){    
+
+    if (dataHandlerService.validateSavings()){    
       this.setState();
 
       return (
-        <div className="container py-3 px-3 mt-5 card margin-bottom-36px">
-        <div className="py-4 px-2 bg-white border-radius-5">
+        <div className="container py-5 px-5 mt-5 card margin-bottom-36px">
+        <div className="">
           <div className="row">
             <div className="col-lg-12">
             <h2>Saving Method Comparison</h2>
+            <br></br>
+            <p>Shown below are some interesting comparisons between regular savings accounts and other methods of saving, such as investment in the stock market through the use of stocks and shares ISAS, to... etc</p>
+            <br></br>
+            <h4>Scenario details</h4>
+            <ul>
+              <li>On average, every 8 Years the stock market crashes</li>
+              <li>A crash is considered a drop of more than 10%</li>
+              <li>Market crash severity is randomly generated between 10% - 25%</li>
+              <li>Stock market gains are randomly generated between 6% - 10%</li>
+            </ul>
+            <br></br>
             <Chart
             width="100%"
-            height={'350px'}
-              chartType="LineChart"
+            height={'450px'}
+              chartType="Line"
               loader={<div>Loading Chart</div>}
               data={this.generateChartData()}
               options={{
@@ -46,10 +53,10 @@ class LineChart extends React.Component {
                   title: 'GBP (k)',
                 },
                 series: {
+                  0: { curveType: 'function' },
                   1: { curveType: 'function' },
                 },
               }}
-              rootProps={{ 'data-testid': '2' }}
             />
             </div>
           </div>
@@ -59,7 +66,7 @@ class LineChart extends React.Component {
     }
     else{
       return (
-        <div className="container py-3 px-3 mt-5 card margin-bottom-36px">
+        <div className="container py-5 px-5 mt-5 card margin-bottom-36px">
           <h2>Saving Method Comparison</h2>
           no data
         </div>
@@ -70,33 +77,52 @@ class LineChart extends React.Component {
 
 
   generateChartData = () => {
-    var years =50;
+    let years = 51;
+    let crash = 0;
 
-    var chartData = [ ['x', 'Stocks ISA', 'Standard'] ];
-    let savings = parseInt(this.state.savings);
-    let savingsInterest = 0;
-    let savingstotal = savings;
+    // you have a problem
+    let chartData = [["Years", "S&P500", "Savings Account"]],
+        savings = parseInt(this.state.savings),
+        savingsInterest,
+        savingstotal,
+        isaSavings = parseInt(this.state.savings),
+        isaSavingsInterest,
+        isaSavingstotal;
 
-    let isaSavings = parseInt(this.state.savings);
-    let isaSavingsInterest = 0;
-    let isaSavingstotal = isaSavings;
-
-    for(var i = 0; i < years; i++) 
+    for(let i = 0; i < years; i++) 
     {
+      if(i === 0 ){
+        savingstotal = savings;
+        isaSavingstotal = isaSavings;
+      }
+      else{
       //standard savings
       savings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
       savingsInterest = savings/100*this.state.savingsRate;
       savingstotal = savings + savingsInterest;
 
       //Stocks
-      var YearsInterest = this.getRandomInt(-7, 15);
-      isaSavings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
-      isaSavingsInterest = isaSavings/100*YearsInterest;
-      isaSavingstotal = isaSavings + isaSavingsInterest;
+      let YearsInterest;
+      if(crash == 8){
+        YearsInterest = this.getRandomInt(-20, -10);
+        isaSavings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
+        isaSavingsInterest = isaSavings/100*YearsInterest;
+        isaSavingstotal = isaSavings + isaSavingsInterest;
+        crash = 0;
+      }
+      else{
+        YearsInterest = this.getRandomInt(6,10);
+        isaSavings += this.state.savingsRateAmountPer * this.savingFrequency(this.state.savingsFreq);
+        isaSavingsInterest = isaSavings/100*YearsInterest;
+        isaSavingstotal = isaSavings + isaSavingsInterest;
+      }
 
-      chartData.push([parseInt(i),isaSavingstotal,savingstotal]);
-      savings = savingstotal;
-      isaSavings = isaSavingstotal; 
+
+    }
+    chartData.push([parseInt(i),isaSavingstotal,savingstotal]);
+    savings = savingstotal;
+    isaSavings = isaSavingstotal; 
+      crash++;
     }
 
     return chartData;

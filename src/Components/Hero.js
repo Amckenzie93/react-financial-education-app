@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
+import { DataHandler } from "../Services/clientDataHandler"
 import React from "react";
 
 class Hero extends React.Component {
@@ -13,10 +14,37 @@ class Hero extends React.Component {
   }
 
   render() {
+
+    let dataHandlerService = DataHandler.getInstance();
+    const data = dataHandlerService.getAllData();
+
+    if (dataHandlerService.validName()){
+      return (
+        <div className="hero text-white pt-5">
+          <div className="container pt-5">
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="v-align">
+                  <h1>{"Hi " + dataHandlerService.getUsername()}</h1>
+                  <h3>Good to see you back</h3>
+                </div>
+              </div>
+              <div className="col-lg-8 text-center">
+                <img
+                  className="width100"
+                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if (this.state.expanded === true && this.state.entered != true) {
       return (
-        <div className="hero text-white">
-          <div className="container pt-4">
+        <div className="hero text-white pt-5">
+          <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
@@ -39,7 +67,7 @@ class Hero extends React.Component {
               </div>
               <div className="col-lg-8 text-center">
                 <img
-                  className="width100 mb-5"
+                  className="width100"
                   src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
                 />
               </div>
@@ -50,8 +78,8 @@ class Hero extends React.Component {
     }
     else if(this.state.expanded === true && this.state.entered === true){
       return (
-        <div className="hero text-white">
-          <div className="container pt-4">
+        <div className="hero text-white pt-5">
+          <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
@@ -70,7 +98,7 @@ class Hero extends React.Component {
               </div>
               <div className="col-lg-8 text-center">
                 <img
-                  className="width100 mb-5"
+                  className="width100"
                   src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
                 />
               </div>
@@ -81,8 +109,8 @@ class Hero extends React.Component {
     }
     else {
       return (
-        <div className="hero text-white">
-        <div className="container pt-4">
+        <div className="hero text-white pt-5">
+        <div className="container pt-5">
           <div className="row">
             <div className="col-lg-4">
               <div className="v-align">
@@ -102,7 +130,7 @@ class Hero extends React.Component {
             </div>
             <div className="col-lg-8 text-center">
               <img
-                className="width100 mb-5"
+                className="width100"
                 src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
               />
             </div>

@@ -3,6 +3,7 @@ import { animatePresence, motion } from "framer-motion";
 
 import Heros from "../Components/Heros";
 import React from "react";
+import Transitions from "../utility/transitions"
 
 class AboutPage extends React.Component {
   state = {};
@@ -12,23 +13,15 @@ class AboutPage extends React.Component {
   }
 
   render() {
-    const tansition1 = {
-      in: {
-        opacity: 1,
-        y: "0%",
-      },
-      out: {
-        opacity: 0,
-        y: "100%",
-      },
-    };
+
+    let transition = Transitions.getInstance();
 
     return (
       <motion.div
         initial="out"
         animate="in"
         exit="out"
-        variants={tansition1}
+        variants={transition.getTransition()}
         transition={{ duration: 0.62 }}
       >
         <Heros/>
@@ -37,7 +30,7 @@ class AboutPage extends React.Component {
         initial="out"
         animate="in"
         exit="out"
-        variants={tansition1}
+        variants={transition.getTransition()}
         transition={{ duration: 0.9 }}
       >
         <div className="bg-white bg-shadow-up pt-1">

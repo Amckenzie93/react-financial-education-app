@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 import React from "react";
+import Transitions from "../utility/transitions"
 import { motion } from "framer-motion";
 
 class EduCard extends React.Component {
@@ -13,25 +14,17 @@ class EduCard extends React.Component {
   }
 
   render() {
-    const tansition1 = {
-      in: {
-        opacity: 1,
-        y: "0%",
-      },
-      out: {
-        opacity: 0,
-        y: "100%",
-      },
-    };
 
+    let transition = Transitions.getInstance();
+    
     if (this.state.understand === true && this.state.expanded === false) {
       return (
         <motion.div
           initial="out"
           animate="in"
           exit="out"
-          variants={tansition1}
-          transition={{ duration: 0.82 }}
+          variants={transition.getTransition()}
+          transition={{ duration: 0.85 }}
         >
           <div
             className="container infoCard py-3 px-3 card margin-bottom-36px"
@@ -53,8 +46,8 @@ class EduCard extends React.Component {
                   />
                 </div>
                 <div className="col-lg-9">
-                  <h2 className="mb-2">{this.props.title} - Complete</h2>
-                  <h4 className="mb-3">{this.props.subtitle}</h4>
+                  <h4 className="mb-2">{this.props.title} - Complete</h4>
+                  <h2 className="mb-3">{this.props.subtitle}</h2>
                   <p className="mb-3">{this.props.paragraph}</p>
                 </div>
               </div>
@@ -68,7 +61,7 @@ class EduCard extends React.Component {
           initial="out"
           animate="in"
           exit="out"
-          variants={tansition1}
+          variants={transition.getTransition()}
           transition={{ duration: 0.82 }}
         >
           <div
@@ -85,8 +78,8 @@ class EduCard extends React.Component {
                   />
                 </div>
                 <div className="col-lg-9">
-                  <h2 className="mb-2">{this.props.title}</h2>
-                  <h4 className="mb-3">{this.props.subtitle}</h4>
+                  <h4 className="mb-2">{this.props.title}</h4>
+                  <h2 className="mb-3">{this.props.subtitle}</h2>
                   <p className="mb-3">{this.props.paragraph}</p>
                 </div>
               </div>
@@ -109,7 +102,7 @@ class EduCard extends React.Component {
                     className="btn btn-primary mt-2"
                     onClick={this.understand}
                   >
-                    I have learned
+                    Complete
                   </button>
                 </div>
               </div>
@@ -124,7 +117,7 @@ class EduCard extends React.Component {
             initial="out"
             animate="in"
             exit="out"
-            variants={tansition1}
+            variants={transition.getTransition()}
             transition={{ duration: 0.82 }}
           >
             <div
@@ -147,8 +140,8 @@ class EduCard extends React.Component {
                     />
                   </div>
                   <div className="col-lg-9">
-                    <h2 className="mb-2">{this.props.title} - Complete</h2>
-                    <h4 className="mb-3">{this.props.subtitle}</h4>
+                    <h4 className="mb-2">{this.props.title} - Complete</h4>
+                    <h2 className="mb-3">{this.props.subtitle}</h2>
                     <p className="mb-3">{this.props.paragraph}</p>
                   </div>
                 </div>
@@ -179,7 +172,7 @@ class EduCard extends React.Component {
             initial="out"
             animate="in"
             exit="out"
-            variants={tansition1}
+            variants={transition.getTransition()}
             transition={{ duration: 1 }}
           >
             <div
@@ -196,8 +189,8 @@ class EduCard extends React.Component {
                     />
                   </div>
                   <div className="col-lg-9">
-                    <h2 className="mb-2">{this.props.title}</h2>
-                    <h4 className="mb-3">{this.props.subtitle}</h4>
+                    <h4 className="mb-2">{this.props.title}</h4>
+                    <h2 className="mb-3">{this.props.subtitle}</h2>
                     <p className="mb-3">{this.props.paragraph}</p>
                   </div>
                 </div>
