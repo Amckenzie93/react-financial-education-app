@@ -2,10 +2,6 @@ import { DataHandler } from "../Services/clientDataHandler"
 import EduCard from './EduCard.js'
 import React from 'react';
 
-// localStorage.setItem("Name", "Adam");
-// const name = localStorage.getItem("Name");
-
-
 class EduCards extends React.Component {
 
    
