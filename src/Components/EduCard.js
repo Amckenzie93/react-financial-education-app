@@ -27,7 +27,7 @@ class EduCard extends React.Component {
           transition={{ duration: 0.85 }}
         >
           <div
-            className="container infoCard py-3 px-3 card margin-bottom-36px"
+            className="container infoCard closed py-3 px-3 card margin-bottom-36px"
             onClick={this.expand}
           >
             <div className="py-4 px-2 bg-white border-radius-5">
@@ -176,7 +176,7 @@ class EduCard extends React.Component {
             transition={{ duration: 1 }}
           >
             <div
-              className="container infoCard py-3 px-3 card margin-bottom-36px"
+              className="container infoCard closed py-3 px-3 card margin-bottom-36px"
               onClick={this.expand}
             >
               <div className=" py-4 px-2 bg-white border-radius-5">

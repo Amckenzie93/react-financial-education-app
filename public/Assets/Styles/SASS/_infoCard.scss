@@ -7,4 +7,16 @@
         -moz-box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
         box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
     }
+
+    .tick {
+        max-width: 150px;
+        margin: auto;
+        display: inherit;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        opacity: 0.9;
+        transform: translateY(-50%);
+       }
 }

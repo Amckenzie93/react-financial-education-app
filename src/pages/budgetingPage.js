@@ -25,7 +25,7 @@ class budgetingPage extends React.Component {
         <React.Fragment>
           <div className="text-black min-height-100vh">
             <div className="padding-verticle-84px">
-              <div className="container pt-4 text-white">
+              <div className="container pt-4 text-white margin-bottom-64px">
               <div className="row">
                 <div className="col-lg-6">
                   <div className="v-align">
@@ -40,7 +40,7 @@ class budgetingPage extends React.Component {
                 <div className="col-lg-6 text-center">
                   <img
                     className="width100 mb-5 v-align"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/me.svg"
                   />
                 </div>
               </div>
