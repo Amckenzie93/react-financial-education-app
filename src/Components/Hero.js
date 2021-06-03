@@ -20,7 +20,7 @@ class Hero extends React.Component {
 
     if (dataHandlerService.validName()){
       return (
-        <div className="hero text-white pt-5">
+        <div className="hero text-white pt-5 mb-5">
           <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
@@ -43,7 +43,7 @@ class Hero extends React.Component {
 
     if (this.state.expanded === true && this.state.entered != true) {
       return (
-        <div className="hero text-white pt-5">
+        <div className="hero text-white pt-5 mb-5">
           <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
@@ -57,6 +57,7 @@ class Hero extends React.Component {
                         id="username"
                         name="username"
                         type="text"
+                        required
                         placeholder="Gandalf the grey"
                       />
                       
@@ -78,7 +79,7 @@ class Hero extends React.Component {
     }
     else if(this.state.expanded === true && this.state.entered === true){
       return (
-        <div className="hero text-white pt-5">
+        <div className="hero text-white pt-5 mb-5">
           <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
@@ -109,7 +110,7 @@ class Hero extends React.Component {
     }
     else {
       return (
-        <div className="hero text-white pt-5">
+        <div className="hero text-white pt-5 mb-5">
         <div className="container pt-5">
           <div className="row">
             <div className="col-lg-4">

@@ -31,8 +31,8 @@ class educationPage extends React.Component {
           transition={{ duration: 0.62 }}
         >
           <div className="Education text-black min-height-100vh padding-bottom-84px">
-            <div className="container pt-4 text-white">
-              <div className="row margin-top-64px">
+            <div className="container pt-4 text-white margin-bottom-64px">
+              <div className="row margin-top-84px">
                 <div className="col-lg-6">
                   <div className="v-align">
                   <h1 className="mb-2">
@@ -49,7 +49,7 @@ class educationPage extends React.Component {
                 <div className="col-lg-6 text-center">
                   <img
                     className="width100 mb-5 v-align"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/2.svg"
                   />
                 </div>
               </div>
