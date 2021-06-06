@@ -39,9 +39,10 @@ body .navbar.navbar-dark a.nav-link {
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
-body .navbar.navbar-dark a.nav-link:hover {
+body .navbar.navbar-dark a.nav-link:hover, body .navbar.navbar-dark a.nav-link.active {
   border-top: 1px solid;
   border-bottom: 1px solid;
+  padding-bottom: 4px;
 }
 
 body .navbar.navbar-dark .glossOver {
@@ -67,19 +68,6 @@ body footer > div {
 
 body footer > div a {
   color: #fff;
-}
-
-body .Education .tick {
-  max-width: 150px;
-  margin: auto;
-  display: inherit;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  opacity: 0.9;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 body .infoCard {

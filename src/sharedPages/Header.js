@@ -23,20 +23,20 @@ class Header extends React.Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item active">
-              <NavLink className="nav-link" to="/">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/" activeClassName="active" exact>
                 Home <span className="sr-only">(current)</span>
               </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/education">
+              <NavLink className="nav-link" to="/education" activeClassName="active" exact>
                 Education
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/budgeting">
+              <NavLink className="nav-link" to="/budgeting" activeClassName="active" exact>
                 Budgeting
-              </Link>
+              </NavLink>
             </li>
             {/* <li className="nav-item">
               <Link className="nav-link" to="/about">
