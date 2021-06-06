@@ -31,6 +31,17 @@ body .navbar.navbar-dark .navbar-toggler {
   z-index: 998;
 }
 
+body .navbar.navbar-dark .navbar-collapse:not(.collapse) {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #000;
+  width: 100%;
+  height: 100vh;
+}
+
 body .navbar.navbar-dark a.nav-link {
   color: rgba(255, 255, 255, 0.7);
   padding: 0.1em;
