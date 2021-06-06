@@ -69,7 +69,7 @@ class educationPage extends React.Component {
           transition={{ duration: 0.62 }}
         >
           <div className="Education text-black min-height-100vh padding-bottom-84px">
-            <div className="container pt-4 text-white">
+            <div className="container pt-4 text-white margin-bottom-32px">
               <div className="row margin-top-64px">
                 <div className="col-lg-7">
                   <div className="v-align">

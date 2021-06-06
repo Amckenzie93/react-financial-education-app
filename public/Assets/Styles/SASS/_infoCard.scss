@@ -19,4 +19,9 @@
         opacity: 0.9;
         transform: translateY(-50%);
        }
+
+       @media screen and (max-width:600px){
+        max-width: 90%;
+        width:100%;
+       }
 }
