@@ -233,6 +233,7 @@ class UserDetail extends React.Component {
                   required
                   id="savingsRate"
                   name="savingsRate"
+                  type="number"
                 />
               </div>
 
@@ -265,6 +266,7 @@ class UserDetail extends React.Component {
                   required
                   id="savingsRateAmountPer"
                   name="savingsRateAmountPer"
+                  type="number"
                 />
               </div>
 
