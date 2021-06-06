@@ -4,6 +4,16 @@ import React from 'react';
 
 class Header extends React.Component {
   
+  mobileToggle = (event) => {
+    debugger;
+    document.getElementById("navbarNav").classList.toggle("collapse");
+  }
+
+  closeOnClick = (event) => {
+    debugger;
+    document.getElementById("navbarNav").classList.add("collapse");
+  }
+
   render(){
 
     return (
@@ -18,35 +28,36 @@ class Header extends React.Component {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={this.mobileToggle}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" activeClassName="active" exact>
+              <NavLink className="nav-link" to="/" activeClassName="active" exact onClick={this.closeOnClick}>
                 Home <span className="sr-only">(current)</span>
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/education" activeClassName="active" exact>
+              <NavLink className="nav-link" to="/education" activeClassName="active" exact onClick={this.closeOnClick}>
                 Education
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/budgeting" activeClassName="active" exact>
+              <NavLink className="nav-link" to="/budgeting" activeClassName="active" exact onClick={this.closeOnClick}>
                 Budgeting
               </NavLink>
             </li>
             {/* <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <NavLink className="nav-link" to="/about" activeClassName="active" exact onClick={this.closeOnClick}>
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link" to="/contact" activeClassName="active" exact onClick={this.closeOnClick}>
                 Contact
-              </a>
+              </NavLink>
             </li> */}
           </ul>
         </div>
