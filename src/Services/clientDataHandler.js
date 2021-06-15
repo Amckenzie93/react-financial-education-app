@@ -1,8 +1,8 @@
 
 export class DataHandler {
   dataStore = {
-    salary: localStorage.getItem("salary"),
     userName: localStorage.getItem("userName"),
+    salary: localStorage.getItem("salary"),
     savings: localStorage.getItem("savings"),
     savingsRate: localStorage.getItem("savingsRate"),
     savingsFreq: localStorage.getItem("savingsFreq"),
@@ -22,7 +22,6 @@ export class DataHandler {
   getAllData = () => {
     return this.dataStore;
   };
-
   
   getUsername = () => {
     return this.dataStore.userName;

@@ -14,39 +14,35 @@ class SettingsPage extends React.Component {
   render() {
 
     let dataHandlerService = DataHandler.getInstance()
+    let data = dataHandlerService.getAllData();
+    debugger;
     if(dataHandlerService.hasAnyData()){
     return (
       <div>
-        <div className="bg-purple-grad" style={{"height":"1px"}}></div>
+        <div className="bg-purple-grad" style={{ height: "1px" }}></div>
         <div className="bg-white bg-shadow-up pt-1 margin-top-80px">
           <div className="container py-5 px-5 mt-5">
             <div className="row text-center">
               <div className="col-lg-12">
-                <h2 className="mb-4">Delete your data</h2>
-                <img
-                  className="mb-4 max-width-170px"
-                  src="./Assets/Images/book.svg"
-                />
+                <h2 className="">Your Data</h2>
+                {this.renderData(data)}
+                <h3 className="mb-3 margin-top-64px">Delete your data</h3>
                 <p className="mb-4">
                   Confirm below to delete all your data from your device
                 </p>
-                
-                  <form onSubmit={this.deleteData}>
+                <form onSubmit={this.deleteData}>
                   <button
                     type="submit"
-                    className="btn btn-primary mt-2"
+                    className="btn btn-danger mt-2"
                     role="submit"
                   >
                     Delete
                   </button>
-                  </form>
-                
+                </form>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     );
     }
@@ -58,8 +54,9 @@ class SettingsPage extends React.Component {
             <div className="container py-5 px-5 mt-5">
               <div className="row text-center">
                 <div className="col-lg-12">
-                  <h2 className="mb-4">You have no data</h2>
-                  <img style={{"max-width":"200px"}} src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/no-data.png"></img>
+                  <h2 className="mb-5">You have no data</h2>
+                  {this.renderData(data)}
+                  <img className="margin-top-42px" style={{"max-width":"200px"}} src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/no-data.png"></img>
                 </div>
               </div>
             </div>
@@ -74,6 +71,19 @@ class SettingsPage extends React.Component {
     dataHandlerService.deleteData();
   }
 
+  renderData = (data) => {
+    let collection = [];
+    for (const key in data) {
+      collection.push(`${key}: ${data[key]}`)
+    }
+    return (
+      <div>
+          {collection.map(function(item, index){
+              return <div key={ index }>{item}</div>;
+            })}
+      </div>
+    )
+  }
 }
 
 export default SettingsPage;
