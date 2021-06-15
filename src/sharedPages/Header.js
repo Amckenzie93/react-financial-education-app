@@ -1,9 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
-
+import { DataHandler } from "../Services/clientDataHandler"
+import { NavLink } from "react-router-dom";
 import React from 'react';
 
 class Header extends React.Component {
   
+  constructor() {
+    super();
+    this.state = {}
+  }
+
   mobileToggle = (event) => {
     document.getElementById("navbarNav").classList.toggle("collapse");
   }
@@ -14,10 +19,12 @@ class Header extends React.Component {
 
   render(){
 
+    let dataHandlerService = DataHandler.getInstance();
+
     return (
       <nav className="navbar navbar-expand-lg navbar-dark">
         <script scr="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <Link className="navbar-brand" to="/"></Link>
+        <NavLink className="navbar-brand" to="/"></NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -60,16 +67,11 @@ class Header extends React.Component {
                 Budgeting
               </NavLink>
             </li>
-            {/* <li className="nav-item">
-              <NavLink className="nav-link" to="/about" activeClassName="active" exact onClick={this.closeOnClick}>
-                About
-              </NavLink>
-            </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact" activeClassName="active" exact onClick={this.closeOnClick}>
-                Contact
-              </NavLink>
-            </li> */}
+            <NavLink className="nav-link" to="/settings" activeClassName="active" exact onClick={this.closeOnClick}>
+              Settings
+            </NavLink>
+          </li>
           </ul>
         </div>
         <div className="glossOver"></div>
@@ -77,7 +79,6 @@ class Header extends React.Component {
     );
   }
 
-  
 }
 
 export default Header;

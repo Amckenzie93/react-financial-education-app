@@ -30,6 +30,7 @@ export class DataHandler {
 
   setUsername = (value) => {
     localStorage.setItem("userName", value);
+    this.dataStore.userName = value;
   };
 
   setSalary = (value) => {
@@ -70,6 +71,18 @@ export class DataHandler {
     return true;
   };
 
+  hasAnyData= () => {
+    let hasData = false;
+    for (let element in this.dataStore) {
+      if (this.dataStore[element] != null) {
+        hasData = true;
+      }
+    }
+    if(hasData == true){
+      return true;
+    }
+  }
+
   //simple name check validator
   validName = () =>{
     if(this.dataStore.userName != null){
@@ -87,6 +100,16 @@ export class DataHandler {
           return true;
       }
       return false;
+  }
+
+  deleteData = () => {
+    localStorage.removeItem("userName");
+    localStorage.removeItem("salary");
+    localStorage.removeItem("savings");
+    localStorage.removeItem("savingsRate");
+    localStorage.removeItem("savingsFreq");
+    localStorage.removeItem("savingsRateAmountPer");
+    localStorage.removeItem("completedLessons");
   }
 
   // setAllFormData(data){

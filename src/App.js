@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Route, Switch } from "react-router-dom";
 
-import AboutPage from "./pages/aboutPage.js";
 import { AnimatePresence } from "framer-motion";
 import BudgetingPage from "./pages/budgetingPage.js";
 import EducationPage from "./pages/educationPage.js";
 import Footer from "./sharedPages/Footer.js";
 import Header from "./sharedPages/Header.js";
 import HomePage from "./pages/homePage.js";
+import settingsPage from "./pages/settingsPage.js";
 
 class BudgetApplicaion extends React.Component { 
   
@@ -16,6 +16,9 @@ class BudgetApplicaion extends React.Component {
   }
 
   render() {
+
+
+
     return (
       <div>
         <React.Fragment>
@@ -29,7 +32,7 @@ class BudgetApplicaion extends React.Component {
                 <Route path="/" exact component={HomePage}></Route>
                 <Route path="/education" exact component={EducationPage}></Route>
                 <Route path="/budgeting" exact component={BudgetingPage}></Route>
-                <Route path="/about" exact component={AboutPage}></Route>
+                <Route path="/settings" exact component={settingsPage}></Route>
               </Switch>
             </AnimatePresence>
             {/* <Footer /> */}
