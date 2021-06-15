@@ -24,11 +24,13 @@ class BudgetApplicaion extends React.Component {
         <React.Fragment>
           <Header />
           <div id="MainContent" className="bg-purple-grad">
-            {/* AnimatePresence from framer-motion is a library allowing react components to mount and dismount in an animated fashion when changed occur in this case at the router level */}
+            {/* AnimatePresence from framer-motion is a library allowing react components to mount and 
+            dismount in an animated fashion when changed occur in this case at the router level */}
             <AnimatePresence exitBeforeEnter>
-              {/* react-router-dom switch to allow us to access each route within the dom to minic page changes without reloading the page or the app. */}
+              {/* react-router-dom switch to allow access to each page within the dom to minic page changes
+               without reloading the page or the app. */}
               <Switch> 
-                {/* can define what pages and or components to use as a path - defining what the URL will show.*/}
+                {/* defines what pages and or rather class components to use as a url path.*/}
                 <Route path="/" exact component={HomePage}></Route>
                 <Route path="/education" exact component={EducationPage}></Route>
                 <Route path="/budgeting" exact component={BudgetingPage}></Route>
