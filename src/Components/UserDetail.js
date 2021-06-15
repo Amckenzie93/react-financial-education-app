@@ -9,11 +9,11 @@ class UserDetail extends React.Component {
     super();
     this.state = {
       userName: null,
-      salary: null,
-      savings: null,
-      savingsRate: null,
-      savingsFreq:null,
-      savingsRateAmountPer: null,
+      salary: "",
+      savings: "",
+      savingsRate: "",
+      savingsFreq:"",
+      savingsRateAmountPer: "",
       edit: false,
     };
     this.onInputchange = this.onInputchange.bind(this);
@@ -168,6 +168,7 @@ class UserDetail extends React.Component {
       }
     }
     else {
+      debugger;
       return (
         <div className="userDetails container py-5 px-5 card">
           <h2>Financial Details</h2>
@@ -192,8 +193,7 @@ class UserDetail extends React.Component {
                   required
                   id="username"
                   name="username"
-                  value={this.state.userName}
-                  onChange={this.onInputchange}
+                  value={data.userName}
                   type="text"
                 />
               </div>

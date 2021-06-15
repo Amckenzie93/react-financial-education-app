@@ -18,7 +18,12 @@ class Hero extends React.Component {
     let dataHandlerService = DataHandler.getInstance();
     const data = dataHandlerService.getAllData();
 
-    if (dataHandlerService.validName()){
+debugger;
+    if(this.state.userName != null){
+      dataHandlerService.setUsername(this.state.userName)
+    }
+
+    if (dataHandlerService.validName() && this.state.entered != true){
       return (
         <div className="hero text-white pt-5 mb-5">
           <div className="container pt-5">
@@ -143,14 +148,24 @@ class Hero extends React.Component {
   }
 
 
+  
+  trysetState = () => {
+    if(localStorage.getItem("userName") != null){
+      let dataHandlerService = DataHandler.getInstance();
+      dataHandlerService.setUsername(this.state.userName);
+      this.setState({
+        userName : localStorage.getItem("userName")
+      });
+    }
+  };
+
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.target);
+    let form = new FormData(event.target);
+    localStorage.setItem("userName", form.get("username"));
     this.setState({
-      userName: data.get("username"),
-    });
-    localStorage.setItem("userName", data.get("username"));
-    this.setState({
+      userName: form.get("username"),
       entered : true
     });
   };

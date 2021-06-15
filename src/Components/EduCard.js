@@ -87,17 +87,9 @@ class EduCard extends React.Component {
                 <div className="col-lg-3"></div>
                 <div className="col-lg-9">
                   <hr className="margin-bottom-28px" />
-                  <h4>The Context</h4>
-                  <p>
-                    This lesson is aimed at I've spent quality time in the
-                    aerospace community, with my service on two presidential
-                    commissions, but at heart, I'm an academic.
-                  </p>
-                  <ul className="ml-0 pl-4">
-                    <li>some topic point</li>
-                    <li>some topic point</li>
-                    <li>some topic point</li>
-                  </ul>
+                  <h4>{this.props.lessonTitle}</h4>
+                  <p>{this.props.lessonText}</p>
+                  {this.renderList(this.props.lessonPoints)}
                   <button
                     className="btn btn-primary mt-2"
                     onClick={this.understand}
@@ -149,12 +141,8 @@ class EduCard extends React.Component {
                   <div className="col-lg-3"></div>
                   <div className="col-lg-9">
                     <hr className="margin-bottom-28px" />
-                    <h4>The Context</h4>
-                    <p>
-                      This lesson is aimed at I've spent quality time in the
-                      aerospace community, with my service on two presidential
-                      commissions, but at heart, I'm an academic.
-                    </p>
+                    <h4>{this.props.lessonTitle}</h4>
+                    <p>{this.props.lessonText}</p>
                     <ul className="ml-0 pl-4">
                       <li>some topic point</li>
                       <li>some topic point</li>
@@ -199,6 +187,18 @@ class EduCard extends React.Component {
           </motion.div>
         );
       }
+    }
+  }
+
+  renderList = (Array) => {
+    if(Array != undefined){
+      return(
+        <ul>
+          {Array.map(function(data, index) {
+            return <li key={index}>{data}</li>;
+          })}
+        </ul>
+      )
     }
   }
 
