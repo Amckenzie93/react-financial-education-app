@@ -15,7 +15,7 @@ class EduCards extends React.Component {
             paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
             lessonTitle={"sub title about topic"}
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            lessonPoints={["some topic point 1", "some topic point 2", "some topic point 3"]}
             imageUrl={"./Assets/Images/money.png"}
             alt={"Graphical icon of x."}
             />
@@ -26,7 +26,7 @@ class EduCards extends React.Component {
             paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
             lessonTitle={"sub title about topic"}
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            lessonPoints={["some topic point 1", "some topic point 2", "some topic point 3"]}
             imageUrl={"./Assets/Images/inflation.png"}
             alt={"Graphical icon of x."}
             />
@@ -37,7 +37,7 @@ class EduCards extends React.Component {
             paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
             lessonTitle={"sub title about topic"}
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["Snowball Method ", "Avalanch Method"]}
+            lessonPoints={["Snowball Method", "Avalanch Method"]}
             subHeading1={"Snowball Method"}
             subParagraph1={"Details about Snowball bdfgndjndk dfgjn dkfgnjfkdg Pay off the smallest debt first and continue this process knocking off each as you go"}
             subHeading2={"Avalanch Method"}
@@ -49,10 +49,10 @@ class EduCards extends React.Component {
             lessonId={4}
             title={"Lesson 4"}
             subtitle={"What is an ISA ?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
-            lessonTitle={"sub title about topic"}
-            lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."} 
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            paragraph={"Checkin in soon to find out more information about ISA's in the coming months."}
+            lessonTitle={"Content coming soon"}
+            lessonText={""} 
+            lessonPoints={[]}
             imageUrl={"./Assets/Images/isa.png"}
             alt={"Graphical icon of x."}
             />
@@ -60,10 +60,10 @@ class EduCards extends React.Component {
             lessonId={5}
             title={"Lesson 5"}
             subtitle={"What is the Stock Market?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
-            lessonTitle={"sub title about topic"}
-            lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            paragraph={"Checkin in soon to find out more information about ISA's in the coming months."}
+            lessonTitle={"Content coming soon"}
+            lessonText={""} 
+            lessonPoints={[]}
             imageUrl={"./Assets/Images/stocks.png"}
             alt={"Graphical icon of x."}
             />
@@ -71,10 +71,10 @@ class EduCards extends React.Component {
             lessonId={6}
             title={"Lesson 6"}
             subtitle={"What are Bonds?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
-            lessonTitle={"sub title about topic"}
-            lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            paragraph={"Checkin in soon to find out more information about ISA's in the coming months."}
+            lessonTitle={"Content coming soon"}
+            lessonText={""} 
+            lessonPoints={[]}
             imageUrl={"./Assets/Images/bonds.png"}
             alt={"Graphical icon of x."}
             />
@@ -82,10 +82,10 @@ class EduCards extends React.Component {
             lessonId={7}
             title={"Lesson 7"}
             subtitle={"What is Capitol Gains?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
-            lessonTitle={"sub title about topic"}
-            lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
-            lessonPoints={["some topic point", "some topic point", "some topic point"]}
+            paragraph={"Checkin in soon to find out more information about ISA's in the coming months."}
+            lessonTitle={"Content coming soon"}
+            lessonText={""} 
+            lessonPoints={[]}
             imageUrl={"./Assets/Images/gains.png"}
             alt={"Graphical icon of x."}
             />

@@ -1,6 +1,5 @@
 
-.infoCard {
-    cursor: pointer;
+.eduCard {
     transition: 0.3s all ease-in-out;
     &:hover {
         -webkit-box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
@@ -23,5 +22,9 @@
        @media screen and (max-width:600px){
         max-width: 90%;
         width:100%;
+       }
+
+       .btn{
+           padding:0.75em 1.5em;
        }
 }

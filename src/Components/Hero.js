@@ -16,9 +16,7 @@ class Hero extends React.Component {
   render() {
 
     let dataHandlerService = DataHandler.getInstance();
-    const data = dataHandlerService.getAllData();
 
-debugger;
     if(this.state.userName != null){
       dataHandlerService.setUsername(this.state.userName)
     }

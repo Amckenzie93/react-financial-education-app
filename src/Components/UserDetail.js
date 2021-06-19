@@ -168,7 +168,6 @@ class UserDetail extends React.Component {
       }
     }
     else {
-      debugger;
       return (
         <div className="userDetails container py-5 px-5 card">
           <h2>Financial Details</h2>
