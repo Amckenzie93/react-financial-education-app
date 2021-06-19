@@ -102,7 +102,6 @@ export class DataHandler {
   }
 
   hasLessonStructure = () => {
-    debugger;
     if(this.dataStore.lessonData == undefined){
       return false;
     }
@@ -146,8 +145,9 @@ export class DataHandler {
   }
 
   //return lesson data
-  getLessonStructure = () => {
-    return JSON.parse(this.dataStore.lessonData);
+  getLesson = (id) => {
+    let data =  JSON.parse(this.dataStore.lessonData);
+    return data.lessons[id-1];
   }
 
   //set lesson complete
@@ -160,7 +160,6 @@ export class DataHandler {
 
   getLessonStatus = (id) => {
     let jsonData = JSON.parse(this.dataStore.lessonData);
-    debugger;
     return jsonData.lessons[id-1].completed;
     
   }

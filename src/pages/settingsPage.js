@@ -15,7 +15,7 @@ class SettingsPage extends React.Component {
 
     let dataHandlerService = DataHandler.getInstance()
     let data = dataHandlerService.getAllData();
-    debugger;
+
     if(dataHandlerService.hasAnyData()){
     return (
       <div>
