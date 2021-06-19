@@ -318,7 +318,7 @@ class UserDetail extends React.Component {
   };
 
   trysetState = () => {
-    this.state.salary = localStorage.getItem("salary");
+      this.state.salary = localStorage.getItem("salary");
       this.state.userName = localStorage.getItem("userName");
       this.state.savings = localStorage.getItem("savings");
       this.state.savingsRate = localStorage.getItem("savingsRate");

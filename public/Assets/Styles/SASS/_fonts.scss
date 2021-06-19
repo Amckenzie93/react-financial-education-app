@@ -13,3 +13,19 @@ h2{
 p {
     font-size: 1.12em;
 }
+
+.font-normal{
+    font-weight:normal;
+}
+
+.font-bold{
+    font-weight:bold;
+}
+
+// mixin to create utility classes for font sizes ranging from 1 - 80px 
+$maxCount: 80;
+@for $i from 1 through $maxCount {
+	.font-size-#{$i}px {
+		font-size: #{$i}px;
+	}
+}

@@ -7,7 +7,7 @@ export class DataHandler {
     savingsRate: localStorage.getItem("savingsRate"),
     savingsFreq: localStorage.getItem("savingsFreq"),
     savingsRateAmountPer: localStorage.getItem("savingsRateAmountPer"),
-    completedLessons: localStorage.getItem("completedLessons"),
+    lessonData: localStorage.getItem("lessonData"),
   };
 
   static singleton = null;
@@ -27,7 +27,7 @@ export class DataHandler {
     return this.dataStore.userName;
   };
 
-  setUsername = (value) => {
+   setUsername = (value) => {
     localStorage.setItem("userName", value);
     this.dataStore.userName = value;
   };
@@ -52,9 +52,9 @@ export class DataHandler {
     localStorage.setItem("savingsRateAmountPer", value);
   };
 
-  setCompletedLessons = (value) => {
-    localStorage.setItem("completedLessons", value);
-  };
+  // setCompletedLessons = (value) => {
+  //   localStorage.setItem("lessonData", value);
+  // };
 
   setAny(input) {
     localStorage.setItem([input.target.name], input.target.value);
@@ -101,6 +101,70 @@ export class DataHandler {
       return false;
   }
 
+  hasLessonStructure = () => {
+    debugger;
+    if(this.dataStore.lessonData == undefined){
+      return false;
+    }
+    return true;
+  }
+
+  // sets base lesson json array if none have been setup.
+  setLessonStructure = () => {
+    let lessonStructure = {
+      lessons: [{
+        id: 1,
+        completed: false,
+      },
+      {
+        id: 2,
+        completed: false,
+      },
+      {
+        id: 3,
+        completed: false,
+      },
+      {
+        id: 4,
+        completed: false,
+      },
+      {
+        id: 5,
+        completed: false,
+      },
+      {
+        id: 6,
+        completed: false,
+      },
+      {
+        id: 7,
+        completed: false,
+      }]
+    }
+    localStorage.setItem("lessonData", JSON.stringify(lessonStructure));
+    this.dataStore.lessonData = JSON.stringify(lessonStructure);
+  }
+
+  //return lesson data
+  getLessonStructure = () => {
+    return JSON.parse(this.dataStore.lessonData);
+  }
+
+  //set lesson complete
+  setLessonComplete = (id) => {
+    let jsonData = JSON.parse(this.dataStore.lessonData);
+    jsonData.lessons[id-1].completed = true;
+    localStorage.setItem("lessonData", JSON.stringify(jsonData));
+    this.dataStore.lessonData = JSON.stringify(jsonData);
+  }
+
+  getLessonStatus = (id) => {
+    let jsonData = JSON.parse(this.dataStore.lessonData);
+    debugger;
+    return jsonData.lessons[id-1].completed;
+    
+  }
+
   deleteData = () => {
     localStorage.removeItem("userName");
     localStorage.removeItem("salary");
@@ -108,7 +172,8 @@ export class DataHandler {
     localStorage.removeItem("savingsRate");
     localStorage.removeItem("savingsFreq");
     localStorage.removeItem("savingsRateAmountPer");
-    localStorage.removeItem("completedLessons");
+    localStorage.removeItem("lessonData");
+    this.dataStore = {};
   }
 
   // setAllFormData(data){
