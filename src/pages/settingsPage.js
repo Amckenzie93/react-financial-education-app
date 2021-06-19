@@ -56,7 +56,7 @@ class SettingsPage extends React.Component {
                 <div className="col-lg-12">
                   <h2 className="mb-5">You have no data</h2>
                   {this.renderData(data)}
-                  <img className="margin-top-42px" style={{"max-width":"200px"}} src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/no-data.png"></img>
+                  <img className="margin-top-42px" style={{"maxWidth":"200px"}} src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/no-data.png"></img>
                 </div>
               </div>
             </div>
