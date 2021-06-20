@@ -4,8 +4,7 @@ import React from 'react';
 class EduCards extends React.Component {
   
     render() {
-        
-        
+
         return (
             <div>
             <EduCard 

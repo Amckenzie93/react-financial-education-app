@@ -20,7 +20,7 @@ class budgetingPage extends React.Component {
         animate="in"
         exit="out"
         variants={transition.getTransition()}
-        transition={{ duration: 0.42 }}
+        transition={{ duration: 0.62 }}
       >
         <React.Fragment>
           <div className="text-black min-height-100vh">

@@ -24,7 +24,7 @@ class educationPage extends React.Component {
         animate="in"
         exit="out"
         variants={transition.getTransition()}
-        transition={{ duration: 0.62 }}
+        transition={{ duration: 0.75 }}
       >
         <div className="Education text-black min-height-100vh padding-bottom-84px">
           <div className="container pt-4 text-white margin-bottom-64px">
@@ -51,8 +51,15 @@ class educationPage extends React.Component {
               </div>
             </div>
           </div>
-
-          <EduCards />
+          <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={transition.getTransition()}
+            transition={{ duration: 1 }}
+          >
+            <EduCards />
+          </motion.div>
         </div>
       </motion.div>
     );

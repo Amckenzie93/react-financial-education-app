@@ -27,16 +27,14 @@ class LineChart extends React.Component {
         <div className="">
           <div className="row">
             <div className="col-lg-12">
-            <h2>Saving Method Comparison</h2>
+            <h2>{this.props.title}</h2>
             <br></br>
-            <p>Shown below are some interesting comparisons between regular savings accounts and other methods of saving, such as investment in the stock market through the use of stocks and shares ISAS, to... etc</p>
+            <p>{this.props.paragraph}</p>
             <br></br>
             <h4>Scenario details</h4>
-            <ul>
-              <li>On average, every 8 Years the stock market crashes</li>
-              <li>A crash is considered a drop of more than 10%</li>
-              <li>Market crash severity is randomly generated between 10% - 25%</li>
-              <li>Stock market gains are randomly generated between 6% - 10%</li>
+            <ul className="ml-0 mb-4">
+                    {/* render any lesson point properties passed in as list items available */}
+                    {this.props.listItems.map(item => <li className="mb-2" key={item.Id}>{item}</li>)}
             </ul>
             <br></br>
             <Chart
@@ -44,7 +42,7 @@ class LineChart extends React.Component {
             height={'450px'}
               chartType="Line"
               loader={<div>Loading Chart</div>}
-              data={this.generateChartData()}
+              data={this.generateChartData(51,this.props.chartType)}
               options={{
                 hAxis: {
                   title: 'Years',
@@ -76,13 +74,21 @@ class LineChart extends React.Component {
   }
 
 
-  generateChartData = () => {
-    let years = 51;
+  generateChartData = (yearSpan, type) => {
+    let years = yearSpan;
     let crash = 0;
+    let chartData;
 
-    // you have a problem
-    let chartData = [["Years", "S&P500", "Savings Account"]],
-        savings = parseInt(this.state.savings),
+    // if(type == "Savings Account"){
+    //   chartData = [["Years", type]];
+    // }
+    // else if(type == "Stock Market"){
+    //   chartData = [["Years", type]];
+    // }
+
+    chartData = [["Years", "Stock Market", "Savings Account"]];
+    
+    let savings = parseInt(this.state.savings),
         savingsInterest,
         savingstotal,
         isaSavings = parseInt(this.state.savings),
@@ -119,7 +125,17 @@ class LineChart extends React.Component {
 
 
     }
+
+    // if(type == "Savings Account"){
+    //   chartData.push([parseInt(i),savingstotal]);
+      
+    // }
+    // else if(type == "Stock Market"){
+    //   chartData.push([parseInt(i),isaSavingstotal]);
+    // }
+
     chartData.push([parseInt(i),isaSavingstotal,savingstotal]);
+
     savings = savingstotal;
     isaSavings = isaSavingstotal; 
       crash++;

@@ -1,7 +1,5 @@
 import { DataHandler } from "../Services/clientDataHandler";
 import React from "react";
-import Transitions from "../utility/transitions";
-import { motion } from "framer-motion";
 
 class EduCard extends React.Component {
   constructor() {
@@ -19,18 +17,11 @@ class EduCard extends React.Component {
   }
 
   render() {
-    let transition = Transitions.getInstance();
    
     // collapsed educational card markup being returned with the parent components props passed in
     if (this.state.expanded === false) {
       return (
-        <motion.div
-          initial="out"
-          animate="in"
-          exit="out"
-          variants={transition.getTransition()}
-          transition={{ duration: 0.85 }}
-        >
+        <div>
           <div className="container eduCard closed py-3 px-3 card margin-bottom-36px">
             <div className="py-4 px-2 bg-white border-radius-5">
               <div className="row">
@@ -54,19 +45,13 @@ class EduCard extends React.Component {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       );
     }
     // else render the educational card expanded with all content.
     else {
       return (
-        <motion.div
-          initial="out"
-          animate="in"
-          exit="out"
-          variants={transition.getTransition()}
-          transition={{ duration: 0.82 }}
-        >
+        <div>
           <div className="container eduCard py-3 px-3 card margin-bottom-36px">
             <div className="py-4 px-2 bg-white border-radius-5">
               <div className="row">
@@ -113,7 +98,7 @@ class EduCard extends React.Component {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       );
     }
   }
