@@ -21,6 +21,7 @@ class UserDetails extends React.Component {
             exit="out"
             variants={transition.getTransition()}
             transition={{ duration: 0.9 }}
+            className="px-4"
           >
             <UserDetail />
           </motion.div>
