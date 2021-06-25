@@ -22,6 +22,10 @@ p {
     font-weight:bold;
 }
 
+.text-center{
+    text-align:center;
+}
+
 // mixin to create utility classes for font sizes ranging from 1 - 80px 
 $maxCount: 80;
 @for $i from 1 through $maxCount {
