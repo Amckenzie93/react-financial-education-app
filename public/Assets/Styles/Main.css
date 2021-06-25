@@ -434,6 +434,7 @@ body .navbar.navbar-dark .glossOver {
 }
 
 body footer {
+  background: #1f1f1f;
   color: #fff;
 }
 
@@ -441,8 +442,33 @@ body footer > div {
   padding: 3em 0em;
 }
 
-body footer > div a {
+body footer > div ul {
+  margin-top: 1em;
+}
+
+body footer > div ul > li {
+  margin-bottom: 0.5em;
+}
+
+body footer > div ul > li a {
+  display: block;
   color: #fff;
+}
+
+body footer > div ul > li a:hover {
+  color: #fff !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+body footer > div ul > li a:focus {
+  outline: 2px dashed #fff !important;
+  outline-offset: 1px;
+}
+
+body footer > div h5 {
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 body .eduCard {

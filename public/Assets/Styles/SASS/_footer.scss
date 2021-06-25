@@ -1,9 +1,36 @@
 footer {
+    background:#1f1f1f;
     color: #fff;
     > div {
         padding: 3em 0em;
-        a {
-            color: #fff;
+
+        ul {
+            margin-top:1em;
+            > li{
+                margin-bottom:0.5em;
+            
+                a {
+                    display:block;
+                    color: #fff;
+                }
+    
+                a:hover{
+                    color:#fff !important;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+        
+                a:focus{
+                    outline:2px dashed #fff !important;
+                    outline-offset: 1px;
+                }
+            }
+
+        } 
+
+        h5{
+            font-weight: bold;
+            font-size: 1.5em;
         }
     }
 }
