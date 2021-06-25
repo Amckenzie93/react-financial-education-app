@@ -17,38 +17,3 @@ body {
 
 		@import "_utilityClasses.scss";
 }
-
-
-body{
-
-	:focus{
-		outline:2px dashed #000 !important;
-		outline-offset: 1px;
-		box-shadow: none !important;
-	}
-
-	.card{
-		img{
-			max-height:140px;
-		}
-
-	}
-
-	.mobile{
-		display: none;
-	}
-
-	.desktop{
-		display:block;
-	}
-
-	@media screen and (max-width:991px){
-		.mobile{
-			display: block;
-		}
-
-		.desktop{
-			display: none;
-		}
-	}
-}

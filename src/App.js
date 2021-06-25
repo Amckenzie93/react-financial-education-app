@@ -37,7 +37,7 @@ class BudgetApplicaion extends React.Component {
                 <Route path="/settings" exact component={settingsPage}></Route>
               </Switch>
             </AnimatePresence>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </React.Fragment>
       </div>
