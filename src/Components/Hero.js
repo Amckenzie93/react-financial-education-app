@@ -9,8 +9,9 @@ class Hero extends React.Component {
       userName: null,
       expanded: false,
       entered: false
-  };
+    };
   }
+
 
   render() {
 
@@ -22,14 +23,14 @@ class Hero extends React.Component {
 
     if (dataHandlerService.validName() && this.state.entered != true){
       return (
-        <div className="hero text-white pt-5 px-4 mb-5">
+        <div className="hero text-white padding-top-84px px-4 mb-5">
           <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
                   <img
                     className="width100 mobile"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/homeMain.svg"
                   />
                   <h1>{"Hi " + dataHandlerService.getUsername()}</h1>
                   <h3>Good to see you back</h3>
@@ -38,7 +39,7 @@ class Hero extends React.Component {
               <div className="col-lg-8 text-center">
                 <img
                   className="width100 desktop"
-                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  src="./Assets/Images/homeMain.svg"
                 />
               </div>
             </div>
@@ -49,14 +50,14 @@ class Hero extends React.Component {
 
     if (this.state.expanded === true && this.state.entered != true) {
       return (
-        <div className="hero text-white pt-5 mb-5">
+        <div className="hero text-white padding-top-84px mb-5">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
                   <img
                     className="width100 mobile"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/homeMain.svg"
                   />
                   <h1 className="mb-3">Conquer Finance</h1>
                   <form
@@ -85,7 +86,7 @@ class Hero extends React.Component {
               <div className="col-lg-8 text-center">
                 <img
                   className="width100 desktop"
-                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  src="./Assets/Images/homeMain.svg"
                 />
               </div>
             </div>
@@ -95,14 +96,14 @@ class Hero extends React.Component {
     }
     else if(this.state.expanded === true && this.state.entered === true){
       return (
-        <div className="hero text-white pt-5 mb-5">
+        <div className="hero text-white padding-top-84px mb-5">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
                   <img
                     className="width100 mobile"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/homeMain.svg"
                   />
                   <h1 className="mb-3">Conquer Finance</h1>
                   <form className="mr-5 pr-3" onSubmit={this.handleSubmit}>
@@ -121,7 +122,7 @@ class Hero extends React.Component {
               <div className="col-lg-8 text-center">
                 <img
                   className="width100 desktop"
-                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  src="./Assets/Images/homeMain.svg"
                 />
               </div>
             </div>
@@ -131,14 +132,14 @@ class Hero extends React.Component {
     }
     else {
       return (
-        <div className="hero text-white pt-5 mb-5">
+        <div className="hero text-white padding-top-84px mb-5">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
                   <img
                     className="width100 mobile"
-                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                    src="./Assets/Images/homeMain.svg"
                   />
                   <h1 className="mb-3">Conquer Finance</h1>
                   <p className="mb-4">
@@ -158,7 +159,7 @@ class Hero extends React.Component {
               <div className="col-lg-8 text-center">
                 <img
                   className="width100 desktop"
-                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  src="./Assets/Images/homeMain.svg"
                 />
               </div>
             </div>
