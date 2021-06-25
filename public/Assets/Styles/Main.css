@@ -24,6 +24,10 @@ body .font-bold {
   font-weight: bold;
 }
 
+body .text-center {
+  text-align: center;
+}
+
 body .font-size-1px {
   font-size: 1px;
 }
@@ -433,6 +437,59 @@ body .navbar.navbar-dark .glossOver {
   z-index: 0;
 }
 
+@media screen and (max-width: 991px) {
+  body .navbar.navbar-dark .navbar-toggler {
+    border-color: #fff;
+  }
+  body .navbar.navbar-dark .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  body .navbar.navbar-dark .navbar-collapse.collapse {
+    left: 110%;
+  }
+  body .navbar.navbar-dark .navbar-collapse:not(.collapse) {
+    left: 0;
+  }
+  body .navbar.navbar-dark .navbar-collapse {
+    position: absolute;
+    display: block;
+    top: 0;
+    z-index: 999;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    -webkit-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+  }
+  body .navbar.navbar-dark .navbar-collapse button.navbar-toggler {
+    background: #fff;
+    height: 40px;
+    width: 56px;
+    right: 15px;
+    top: 20px;
+    position: absolute;
+    color: #000;
+    font-family: system-ui;
+    font-weight: bold;
+  }
+  body .navbar.navbar-dark .navbar-collapse > ul {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  body .navbar.navbar-dark .navbar-collapse > ul a.nav-link {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1.75em;
+    margin-right: 0em;
+  }
+  body .navbar.navbar-dark .navbar-collapse > ul a.nav-link.active {
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
 body footer {
   background: #1f1f1f;
   color: #fff;
@@ -469,6 +526,13 @@ body footer > div ul > li a:focus {
 body footer > div h5 {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+body footer .copyright {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 1.5em;
 }
 
 body .eduCard {
@@ -7843,6 +7907,11 @@ body .min-height-100vh {
 
 body .max-width-170px {
   max-width: 170px;
+  width: 100%;
+}
+
+body .max-width-185px {
+  max-width: 185px;
   width: 100%;
 }
 
