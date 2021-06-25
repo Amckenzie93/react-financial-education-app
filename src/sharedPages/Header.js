@@ -11,6 +11,7 @@ class Header extends React.Component {
 
   mobileToggle = (event) => {
     document.getElementById("navbarNav").classList.toggle("collapse");
+    document.getElementById("MainContent").classList.toggle("blur");
   }
 
   closeOnClick = (event) => {

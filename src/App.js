@@ -16,9 +16,6 @@ class BudgetApplicaion extends React.Component {
   }
 
   render() {
-
-
-
     return (
       <div>
         <React.Fragment>
@@ -42,8 +39,6 @@ class BudgetApplicaion extends React.Component {
         </React.Fragment>
       </div>
     );
-
-
   }
 }
 
