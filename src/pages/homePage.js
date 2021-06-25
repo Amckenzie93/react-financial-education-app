@@ -1,9 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
-import { animatePresence, motion } from "framer-motion";
-
+import Column from '../Components/Column'
 import Heros from "../Components/Heros";
 import React from "react";
 import Transitions from "../utility/transitions"
+import { motion } from "framer-motion";
 
 class HomePage extends React.Component {
   state = {};
@@ -13,7 +12,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-
     let transition = Transitions.getInstance();
 
     return (
@@ -24,6 +22,8 @@ class HomePage extends React.Component {
         variants={transition.getTransition()}
         transition={{ duration: 0.62 }}
       >
+
+        {/*Render hero component*/} 
         <Heros />
 
         <motion.div
@@ -31,53 +31,33 @@ class HomePage extends React.Component {
           animate="in"
           exit="out"
           variants={transition.getTransition()}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="bg-white bg-shadow-up pt-1">
-            <div className="container py-5 px-5 mt-5">
+          <div className="pt-1">
+            <div className="container py-1 px-4 mt-5">
               <div className="row text-center">
-                <div className="col-lg-6 margin-bottom-64px">
-                  <h2 className="mb-4">Education</h2>
-                  <img
-                    className="mb-4 max-width-170px"
-                    src="./Assets/Images/book.svg"
-                  />
-                  <p className="mb-4">
-                    Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                    euismod. Nullam id dolor id nibh ultricies vehicula ut id
-                    elit.
-                  </p>
-                  <p>
-                    <NavLink
-                      className="btn btn-primary mt-2"
-                      to="/education"
-                      role="button"
-                    >
-                      View details »
-                    </NavLink>
-                  </p>
-                </div>
-                <div className="col-lg-6 margin-bottom-64px">
-                  <h2 className="mb-4">Budgeting</h2>
-                  <img
-                    className="mb-4 max-width-170px"
-                    src="./Assets/Images/growthSvg.svg"
-                  />
-                  <p className="mb-5">
-                    Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                    euismod. Nullam id dolor id nibh ultricies vehicula ut id
-                    elit.
-                  </p>
-                  <p>
-                    <NavLink
-                      className="btn btn-primary mt-2"
-                      to="/budgeting"
-                      role="button"
-                    >
-                      View details »
-                    </NavLink>
-                  </p>
-                </div>
+                {/*Render a column component with the props being passed in from the parent*/} 
+                <Column
+                  title={"Education"}
+                  transitionTime={1}
+                  image={"./Assets/Images/book.svg"}
+                  paragraph={
+                    "Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                  }
+                  linkUrl={"/education"}
+                  linkText={"View details"}
+                />
+                {/*Render a column component with the props being passed in from the parent*/} 
+                <Column
+                  title={"Budgeting"}
+                  transitionTime={1.175}
+                  image={"./Assets/Images/growthSvg.svg"}
+                  paragraph={
+                    "Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                  }
+                  linkUrl={"/budgeting"}
+                  linkText={"View details"}
+                />
               </div>
             </div>
           </div>

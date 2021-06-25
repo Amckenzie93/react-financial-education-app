@@ -2,6 +2,9 @@
 $maxCount: 120;
 
 @for $i from 0 through $maxCount {
+	.margin-#{$i}px{
+		margin: #{$i}px;
+	}
 
 	.margin-top-#{$i}px {
 		margin-top: #{$i}px;
@@ -30,6 +33,10 @@ $maxCount: 120;
 	}
 	
 	//PADDING
+	.padding-#{$i}px{
+		padding: #{$i}px;
+	}
+
 	.padding-top-#{$i}px {
 		padding-top: #{$i}px;
 	}

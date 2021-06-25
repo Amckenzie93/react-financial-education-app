@@ -12,6 +12,11 @@
         z-index: 998;
     }
 
+    :focus{
+		outline:2px dashed #fff !important;
+		outline-offset: 1px;
+	}
+
     .navbar-collapse:not(.collapse){
         position: absolute;
         display: block;

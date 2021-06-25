@@ -1,8 +1,8 @@
+import Banner from "../Components/Banner";
 import { DataHandler } from "../Services/clientDataHandler"
 import { NavLink } from "react-router-dom";
 import React from "react";
 import Transitions from "../utility/transitions"
-import { browserHistory } from 'react-router'
 import { motion } from "framer-motion";
 
 class SettingsPage extends React.Component {
@@ -30,26 +30,11 @@ if (dataHandlerService.hasAnyData()) {
     <React.Fragment>
       <div className="text-black min-height-100vh">
         <div className="padding-verticle-84px">
-          <div className="container pt-4 text-white margin-bottom-64px">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="v-align">
-                  <h1 className="mb-2">Your Settings</h1>
-                  <p className="mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                  Vivamus sit amet mauris sed leo suscipit pretium. 
-                  Mauris nec nulla tortor. Integer eget cursus justo
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-6 text-center">
-                <img
-                  className="width100 mb-5 v-align"
-                  src="./Assets/Images/settings.svg"
-                />
-              </div>
-            </div>
-          </div>
+
+        <Banner
+        title={"Your Settings"}
+        paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"}
+        image={"/Assets/Images/settings.svg"}/>
 
           <motion.div
           initial="out"
@@ -57,7 +42,7 @@ if (dataHandlerService.hasAnyData()) {
           exit="out"
           variants={transition.getTransition()}
           transition={{ duration: 0.9 }}
-          className="container">
+          className="container px-4">
             <div className="bg-white bg-shadow-up pt-1 margin-top-80px">
               <div className="container py-5 px-5 mt-5">
                 <div className="row text-center">
@@ -100,27 +85,11 @@ if (dataHandlerService.hasAnyData()) {
     <React.Fragment>
       <div className="text-black min-height-100vh">
         <div className="padding-verticle-84px">
-          <div className="container pt-4 text-white margin-bottom-64px">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="v-align">
-                  <h1 className="mb-2">Your Settings</h1>
-                  <p className="mb-0">
-                    Please use the dashboard offered to enter your financial
-                    information so that you can tweak it and adjust so that you
-                    can see a rough estimation of the impact it has had over 50
-                    years.
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-6 text-center">
-                <img
-                  className="width100 mb-5 v-align"
-                  src="./Assets/Images/settings.svg"
-                />
-              </div>
-            </div>
-          </div>
+
+        <Banner
+        title={"Your Settings"}
+        paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"}
+        image={"/Assets/Images/settings.svg"}/>
 
           <motion.div
           initial="out"
@@ -130,7 +99,7 @@ if (dataHandlerService.hasAnyData()) {
           transition={{ duration: 0.9 }}
           className="container">
             <div className="bg-white bg-shadow-up pt-1 margin-top-80px">
-              <div className="container py-5 px-5 mt-5">
+              <div className="container py-5 px-4 mt-5">
                 <div className="row text-center">
                   <div className="col-lg-12">
                     <h2 className="mb-5">You have no data</h2>

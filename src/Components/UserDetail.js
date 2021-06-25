@@ -27,7 +27,9 @@ class UserDetail extends React.Component {
     const data = dataHandlerService.getAllData();
     let transition = Transitions.getInstance();
 
+    // if the user already has valid data 
     if (dataHandlerService.validateSavings()) {
+      //if the user is currently editing their data render this version of HTML 
       if(this.state.edit == true) {
         this.trysetState();
         return (
@@ -116,7 +118,7 @@ class UserDetail extends React.Component {
             </motion.div>
           </div>
         );
-      }
+      } // else render the users data in the un-editing version of HTML
       else{
         this.trysetState();
          return (
@@ -167,6 +169,7 @@ class UserDetail extends React.Component {
          );
       }
     }
+    //Else if no data, present the input form HTML
     else {
       return (
         <div className="userDetails container py-5 px-5 card">
@@ -279,6 +282,7 @@ class UserDetail extends React.Component {
     }
   }
 
+  // when the user makes a change to their data on the application, update the react components state and store/update the persistant data on the users device.
   onInputchange(event) {
     localStorage.setItem([event.target.name], event.target.value);
     this.setState({
@@ -286,18 +290,22 @@ class UserDetail extends React.Component {
     });
   }
 
-  closeEdit() {
-    this.setState({
-      edit: false
-    });
-  }
-
+  // change the state of the react component so the editing version of HTML is rendered.
   openEdit() {
     this.setState({
       edit: true
     });
   }
 
+  // change the state of the react component so the version of HTML rendered is no longer the editing version.
+  closeEdit() {
+    this.setState({
+      edit: false
+    });
+  }
+
+
+  // When the user submits their data, capture it and set the components state along with storing it on the users device. 
   handleSubmit = (event) => {
     const data = new FormData(event.target);
     this.setState({
@@ -316,6 +324,7 @@ class UserDetail extends React.Component {
     localStorage.setItem("savingsRateAmountPer", data.get("savingsRateAmountPer"));
   };
 
+  // get and set the state of the component based on any previously saved data.
   trysetState = () => {
       this.state.salary = localStorage.getItem("salary");
       this.state.userName = localStorage.getItem("userName");

@@ -1,6 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
-
 import { DataHandler } from "../Services/clientDataHandler"
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 class Hero extends React.Component {
@@ -23,18 +22,22 @@ class Hero extends React.Component {
 
     if (dataHandlerService.validName() && this.state.entered != true){
       return (
-        <div className="hero text-white pt-5 mb-5">
+        <div className="hero text-white pt-5 px-4 mb-5">
           <div className="container pt-5">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
+                  <img
+                    className="width100 mobile"
+                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  />
                   <h1>{"Hi " + dataHandlerService.getUsername()}</h1>
                   <h3>Good to see you back</h3>
                 </div>
               </div>
               <div className="col-lg-8 text-center">
                 <img
-                  className="width100"
+                  className="width100 desktop"
                   src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
                 />
               </div>
@@ -47,13 +50,21 @@ class Hero extends React.Component {
     if (this.state.expanded === true && this.state.entered != true) {
       return (
         <div className="hero text-white pt-5 mb-5">
-          <div className="container pt-5">
+          <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
+                  <img
+                    className="width100 mobile"
+                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  />
                   <h1 className="mb-3">Conquer Finance</h1>
-                  <form className="mr-5 pr-3" onSubmit={this.handleSubmit} autoComplete="off">
-                  <p>lets start with your name</p>
+                  <form
+                    className="mr-5 pr-3"
+                    onSubmit={this.handleSubmit}
+                    autoComplete="off"
+                  >
+                    <p>lets start with your name</p>
                     <div className="form-group">
                       <input
                         className="form-control mb-4"
@@ -63,15 +74,17 @@ class Hero extends React.Component {
                         required
                         placeholder="Gandalf the grey"
                       />
-                      
-                      <button className="btn btn-primary" type="submit">Save</button>
+
+                      <button className="btn btn-primary" type="submit" tabindex="0">
+                        Save
+                      </button>
                     </div>
                   </form>
                 </div>
               </div>
               <div className="col-lg-8 text-center">
                 <img
-                  className="width100"
+                  className="width100 desktop"
                   src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
                 />
               </div>
@@ -83,26 +96,31 @@ class Hero extends React.Component {
     else if(this.state.expanded === true && this.state.entered === true){
       return (
         <div className="hero text-white pt-5 mb-5">
-          <div className="container pt-5">
+          <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
+                  <img
+                    className="width100 mobile"
+                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  />
                   <h1 className="mb-3">Conquer Finance</h1>
                   <form className="mr-5 pr-3" onSubmit={this.handleSubmit}>
-                  <p>Thank you {this.state.userName}, lets begin!</p>
-                  <NavLink
-                    className="btn btn-primary mt-2"
-                    to="/education"
-                    role="button"
-                  >
-                    Begin »
-                  </NavLink>
+                    <p>Thank you {this.state.userName}, lets begin!</p>
+                    <NavLink
+                      className="btn btn-primary mt-2"
+                      to="/education"
+                      role="button"
+                      tabindex="0"
+                    >
+                      Begin
+                    </NavLink>
                   </form>
                 </div>
               </div>
               <div className="col-lg-8 text-center">
                 <img
-                  className="width100"
+                  className="width100 desktop"
                   src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
                 />
               </div>
@@ -114,33 +132,38 @@ class Hero extends React.Component {
     else {
       return (
         <div className="hero text-white pt-5 mb-5">
-        <div className="container pt-5">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="v-align">
-                <h1 className="mb-3">Conquer Finance</h1>
-                <p className="mb-4">
-                  Use our free education services and budgeting tools to
-                  better yourself financially for the future
-                </p>
-                <a
-                  className="btn btn-primary mt-2"
-                  role="button"
-                  onClick={this.expand}
-                >
-                  Start your Journey
-                </a>
+          <div className="container pt-5 px-4">
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="v-align">
+                  <img
+                    className="width100 mobile"
+                    src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                  />
+                  <h1 className="mb-3">Conquer Finance</h1>
+                  <p className="mb-4">
+                    Use our free education services and budgeting tools to
+                    better yourself financially for the future
+                  </p>
+                  <a
+                    className="btn btn-primary mt-2"
+                    role="button"
+                    onClick={this.expand}
+                    tabindex="0"
+                  >
+                    Start your Journey
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-8 text-center">
-              <img
-                className="width100"
-                src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
-              />
+              <div className="col-lg-8 text-center">
+                <img
+                  className="width100 desktop"
+                  src="./Assets/Images/—Pngtree—network bitcoin technology blockchain big_4034259.png"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
       );
     }
   }
