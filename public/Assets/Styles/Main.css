@@ -348,6 +348,133 @@ body .font-size-80px {
   font-size: 80px;
 }
 
+body .budgetControl .titles {
+  border-bottom: 1px solid #cacaca;
+  font-weight: bold;
+}
+
+body .budgetControl .titles .row > div {
+  padding: 1em;
+  font-size: 1em;
+}
+
+body .budgetControl .titles .row > div:first-of-type {
+  text-align: right;
+  border-right: 1px solid #cacaca;
+}
+
+body .budgetControl .chart .row .name {
+  text-align: right;
+  border-right: 1px solid #cacaca;
+}
+
+body .budgetControl .chart .row .value {
+  text-align: left;
+}
+
+body .budgetControl .chart .row > div {
+  padding: 1em;
+}
+
+body .budgetControl .chart .row:nth-of-type(odd) .name, body .budgetControl .chart .row:nth-of-type(odd) .value {
+  background: #eaeaea;
+}
+
+body .btn {
+  padding: 0.75em 1.5em;
+  cursor: pointer !important;
+}
+
+body .eduCard {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+body .eduCard:hover {
+  -webkit-box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
+}
+
+body .eduCard .tick {
+  max-width: 150px;
+  margin: auto;
+  display: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  opacity: 0.9;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 600px) {
+  body .eduCard {
+    max-width: 90%;
+    width: 100%;
+  }
+}
+
+body footer {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+body footer > div {
+  padding: 3em 0em;
+}
+
+body footer > div ul {
+  margin-top: 1em;
+}
+
+body footer > div ul > li {
+  margin-bottom: 0.5em;
+}
+
+body footer > div ul > li a {
+  display: block;
+  color: #fff;
+}
+
+body footer > div ul > li a:hover {
+  color: #fff !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+body footer > div ul > li a:focus {
+  outline: 2px dashed #fff !important;
+  outline-offset: 1px;
+}
+
+body footer > div h5 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+body footer .copyright {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+body .hero {
+  background-image: url("/Assets/Images/2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  min-height: 600px;
+}
+
+body .hero :focus {
+  outline: 2px dashed #fff !important;
+  outline-offset: 1px;
+}
+
 body .navbar.navbar-dark {
   position: fixed;
   top: 0;
@@ -503,81 +630,6 @@ body .navbar.navbar-dark .glossOver {
   }
 }
 
-body footer {
-  background: #1f1f1f;
-  color: #fff;
-}
-
-body footer > div {
-  padding: 3em 0em;
-}
-
-body footer > div ul {
-  margin-top: 1em;
-}
-
-body footer > div ul > li {
-  margin-bottom: 0.5em;
-}
-
-body footer > div ul > li a {
-  display: block;
-  color: #fff;
-}
-
-body footer > div ul > li a:hover {
-  color: #fff !important;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-body footer > div ul > li a:focus {
-  outline: 2px dashed #fff !important;
-  outline-offset: 1px;
-}
-
-body footer > div h5 {
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-body footer .copyright {
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-  padding-top: 1.5em;
-}
-
-body .eduCard {
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-}
-
-body .eduCard:hover {
-  -webkit-box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
-  box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
-}
-
-body .eduCard .tick {
-  max-width: 150px;
-  margin: auto;
-  display: inherit;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  opacity: 0.9;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-@media screen and (max-width: 600px) {
-  body .eduCard {
-    max-width: 90%;
-    width: 100%;
-  }
-}
-
 body .userDetails.isEdit ul li input, body .userDetails.isEdit ul li select {
   border: 2px solid #333333;
   background: #f1f1f1;
@@ -605,26 +657,6 @@ body .userDetails button {
   color: #fff;
   border: none;
   border-radius: 3px;
-}
-
-body .hero {
-  background-image: url("/Assets/Images/2.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-  min-height: 600px;
-}
-
-body .hero :focus {
-  outline: 2px dashed #fff !important;
-  outline-offset: 1px;
-}
-
-body .btn {
-  padding: 0.75em 1.5em;
-  cursor: pointer !important;
 }
 
 body .margin-0px {

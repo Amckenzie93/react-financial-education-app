@@ -34,7 +34,7 @@ class LineChart extends React.Component {
             <h4>Scenario details</h4>
             <ul className="ml-0 mb-4">
                     {/* render any lesson point properties passed in as list items available */}
-                    {this.props.listItems.map(item => <li className="mb-2" key={item.Id}>{item}</li>)}
+                    {this.props.listItems.map((item, index) => <li className="mb-2" key={index}>{item}</li>)}
             </ul>
             <br></br>
             <Chart

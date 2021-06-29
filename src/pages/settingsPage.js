@@ -136,7 +136,7 @@ if (dataHandlerService.hasAnyData()) {
     return (
       <div>
           {collection.map(function(item, index){
-              return <div key={ index }>{item}</div>;
+              return <pre key={ index }>{item}</pre>;
             })}
       </div>
     )

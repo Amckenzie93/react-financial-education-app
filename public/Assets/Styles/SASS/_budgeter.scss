@@ -1,0 +1,39 @@
+.budgetControl{
+
+    .titles{
+        border-bottom: 1px solid #cacaca;
+        font-weight: bold;
+        .row{
+            >div {
+                padding:1em;
+                font-size: 1em;
+            }
+            >div:first-of-type{
+                text-align: right;
+                border-right: 1px solid #cacaca;
+            }
+        }
+    }
+
+    .chart{
+        .row{
+            .name{
+                text-align: right;
+                border-right: 1px solid #cacaca;
+            }
+            .value{
+                text-align: left;
+            }
+
+            >div {
+                padding:1em;
+            }
+        }
+
+        .row:nth-of-type(odd){
+            .name, .value{
+                background: #eaeaea;
+            }
+        }
+    }
+}

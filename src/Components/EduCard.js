@@ -18,8 +18,34 @@ class EduCard extends React.Component {
 
   render() {
    
-    // collapsed educational card markup being returned with the parent components props passed in
-    if (this.state.expanded === false) {
+    // is this lesson is coming soon render this
+    if(this.props.comingSoon === true){
+      return(
+        <div>
+        <div className="container eduCard closed py-3 px-3 card margin-bottom-36px">
+          <div className="py-4 px-2 bg-white border-radius-5">
+            <div className="row">
+              <div className="col-lg-3">
+                <img
+                  className="width100 max-width-250px margin-auto py-1 px-4 v-align"
+                  src={this.props.imageUrl}
+                  alt={this.props.alt}
+                />
+                <br></br>
+              </div>
+              <div className="col-lg-9">
+                <h2 className="mb-2 font-size-24px font-normal">{this.props.title} - Coming Soon</h2>
+                <h3 className="mb-3 font-size-32px font-bold">{this.props.subtitle}</h3>
+                <p className="mb-3">Please check back in at a later date for more content coming soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      )
+    }
+    // collapsed state of educard markup being returned with the parent components props passed in
+    else if (this.state.expanded === false) {
       return (
         <div>
           <div className="container eduCard closed py-3 px-3 card margin-bottom-36px">
@@ -32,7 +58,7 @@ class EduCard extends React.Component {
                     alt={this.props.alt}
                   />
                   <br></br>
-                  {/* Function to render the complete image if available */}
+                  {/* Function to render the complete cover image if available */}
                   {this.completeImage(this.state.complete, this.props.alt)}
                 </div>
                 <div className="col-lg-9">
@@ -77,12 +103,11 @@ class EduCard extends React.Component {
               <div className="row">
                 <div className="col-lg-3"></div>
                 <div className="col-lg-9">
-                  <hr className="margin-bottom-28px" />
                   <h4>{this.props.lessonTitle}</h4>
                   <p>{this.props.lessonText}</p>
                   <ul className="ml-0 mb-4">
                     {/* render any lesson point properties passed in as list items available */}
-                    {this.props.lessonPoints.map(point => <li className="mb-2" key={point.Id}>{point}</li>)}
+                    {this.props.lessonPoints.map((point, index) => <li className="mb-2" key={index}>{point}</li>)}
                   </ul>
                   {/* set of turnery statements to render sub content if available. */}
                   {this.props.subHeading1 != null? <h4>{this.props.subHeading1}</h4>: null}
@@ -123,8 +148,8 @@ class EduCard extends React.Component {
     if(Array != undefined){
       return(
         <ul>
-          {Array.map(function(data) {
-            return <li Key={data}>{data}</li>;
+          {Array.map((data, index) => {
+            return <li Key={index}>{data}</li>;
           })}
         </ul>
       )

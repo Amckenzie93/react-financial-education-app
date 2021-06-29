@@ -1,7 +1,7 @@
 import Banner from "../Components/Banner";
 import React from "react";
 import Transitions from "../utility/transitions"
-import UserDetails from "../Components/UserDetails.js";
+import UserDetail from '../Components/UserDetail'
 import { motion } from "framer-motion";
 
 class budgetingPage extends React.Component {
@@ -25,15 +25,25 @@ class budgetingPage extends React.Component {
         <React.Fragment>
           <div className="text-black min-height-100vh">
             <div className="padding-verticle-84px">
-
               {/* render Banner component with content passed in as props */}
               <Banner
-              title={"Your Dashboard"}
-              paragraph={"Please use the dashboard offered to enter your financial information so that you can tweak it and adjust so that you can see a rough estimation of the impact it has had over 50 years."}
-              image={"./Assets/Images/me.svg"}/>
-
-              {/* render UserDetails component */}
-              <UserDetails />
+                title={"Your Dashboard"}
+                paragraph={
+                  "Please use the dashboard offered to enter your financial information so that you can tweak it and adjust so that you can see a rough estimation of the impact it has had over 50 years."
+                }
+                image={"./Assets/Images/me.svg"}
+              />
+              <motion.div
+                initial="out"
+                animate="in"
+                exit="out"
+                variants={transition.getTransition()}
+                transition={{ duration: 0.9 }}
+                className="px-4"
+              >
+                {/* render UserDetails component */}
+                <UserDetail />
+              </motion.div>
             </div>
           </div>
         </React.Fragment>
