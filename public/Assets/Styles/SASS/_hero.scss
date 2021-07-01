@@ -5,10 +5,13 @@
 	background-size: cover;
 	width: 100%;
 	object-fit: fill;
-	min-height: 600px;
 
 	:focus{
 		outline:2px dashed #fff !important;
 		outline-offset: 1px;
+	}
+
+	@media screen and (min-width:992px){
+		margin-bottom: 32px;
 	}
 }

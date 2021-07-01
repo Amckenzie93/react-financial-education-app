@@ -17,23 +17,23 @@ class educationPage extends React.Component {
     let transition = Transitions.getInstance();
 
     return (
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={transition.getTransition()}
-        transition={{ duration: 0.75 }}
-      >
         <div className="Education text-black min-height-100vh padding-verticle-84px">
           {/* render Banner component with props data */}
+          <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={transition.getTransition()}
+            transition={{ duration: 0.75 }}
+          >
           <Banner
             title={"Hello"}
             usersName={this.state.userName}
             subTitle={"Welcome to finance education at your own pace"}
-            paragraph={"Please in your own time feel free to go through each of the offered modules listed below about general finance and how to get the upper hand in order to better yourself financially for the future."}
+            paragraph={"Please In your own time feel free to go through each of the offered modules listed below about general finance and how to get the upper hand In order to better yourself financially for the future."}
             image={"./Assets/Images/2.svg"}
           />
-
+          </motion.div>
           <motion.div
             initial="out"
             animate="in"
@@ -45,8 +45,8 @@ class educationPage extends React.Component {
             <EduCard 
             lessonId={1}
             title={"Lesson 1"}
-            subtitle={"What is Money?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
+            subtitle={"What Is Money?"}
+            paragraph={"In order to traverse the modern world we must understand what money Is. This lesson aims to provide you with a better understanding of money and how It works."}
             lessonTitle={"sub title about topic"}
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
             lessonPoints={["some topic point 1", "some topic point 2", "some topic point 3"]}
@@ -56,8 +56,8 @@ class educationPage extends React.Component {
             <EduCard 
             lessonId={2}
             title={"Lesson 2"}
-            subtitle={"What can i do about debt?"}
-            paragraph={"I've spent quality time in the aerospace community, with my service on two presidential commissions, but at heart, I'm an academic. Being an academic means I don't wield power over person, place or thing. I don't command armies; I don't lead labor unions."}
+            subtitle={"What can I do about debt?"}
+            paragraph={"Sometimes life can throw a curveball your way and in order to be proactive and ready, It Is wise to know a few methods to get out of debt effectivly."}
             lessonTitle={"sub title about topic"}
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
             lessonPoints={["Snowball Method", "Avalanch Method"]}
@@ -112,7 +112,6 @@ class educationPage extends React.Component {
             
           </motion.div>
         </div>
-      </motion.div>
     );
   }
 

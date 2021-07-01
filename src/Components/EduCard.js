@@ -105,7 +105,7 @@ class EduCard extends React.Component {
                 <div className="col-lg-9">
                   <h4>{this.props.lessonTitle}</h4>
                   <p>{this.props.lessonText}</p>
-                  <ul className="ml-0 mb-4">
+                  <ul className="ml-0 mb-0">
                     {/* render any lesson point properties passed in as list items available */}
                     {this.props.lessonPoints.map((point, index) => <li className="mb-2" key={index}>{point}</li>)}
                   </ul>

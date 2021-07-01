@@ -15,16 +15,16 @@ class budgetingPage extends React.Component {
     let transition = Transitions.getInstance();
 
     return (
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={transition.getTransition()}
-        transition={{ duration: 0.62 }}
-      >
-        <React.Fragment>
-          <div className="text-black min-height-100vh">
-            <div className="padding-verticle-84px">
+      <React.Fragment>
+        <div className="text-black min-height-100vh">
+          <div className="padding-verticle-84px">
+            <motion.div
+              initial="out"
+              animate="in"
+              exit="out"
+              variants={transition.getTransition()}
+              transition={{ duration: 0.62 }}
+            >
               {/* render Banner component with content passed in as props */}
               <Banner
                 title={"Your Dashboard"}
@@ -33,21 +33,21 @@ class budgetingPage extends React.Component {
                 }
                 image={"./Assets/Images/me.svg"}
               />
-              <motion.div
-                initial="out"
-                animate="in"
-                exit="out"
-                variants={transition.getTransition()}
-                transition={{ duration: 0.9 }}
-                className="px-4"
-              >
-                {/* render UserDetails component */}
-                <UserDetail />
-              </motion.div>
-            </div>
+            </motion.div>
+            <motion.div
+              initial="out"
+              animate="in"
+              exit="out"
+              variants={transition.getTransition()}
+              transition={{ duration: 0.9 }}
+              className="px-4"
+            >
+              {/* render UserDetails component */}
+              <UserDetail />
+            </motion.div>
           </div>
-        </React.Fragment>
-      </motion.div>
+        </div>
+      </React.Fragment>
     );
   }
 }

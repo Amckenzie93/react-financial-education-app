@@ -15,17 +15,17 @@ class HomePage extends React.Component {
     let transition = Transitions.getInstance();
 
     return (
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={transition.getTransition()}
-        transition={{ duration: 0.62 }}
-      >
-
-        {/*Render hero component*/} 
-        <Heros />
-
+      <div>
+        <motion.div
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={transition.getTransition()}
+          transition={{ duration: 0.62 }}
+        >
+          {/*Render hero component*/}
+          <Heros />
+        </motion.div>
         <motion.div
           initial="out"
           animate="in"
@@ -36,7 +36,7 @@ class HomePage extends React.Component {
           <div className="pt-1">
             <div className="container py-1 px-4 mt-5">
               <div className="row text-center">
-                {/*Render a column component with the props being passed in from the parent*/} 
+                {/*Render a column component with the props being passed in from the parent*/}
                 <Column
                   title={"Education"}
                   transitionTime={1}
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
                   linkUrl={"/education"}
                   linkText={"View details"}
                 />
-                {/*Render a column component with the props being passed in from the parent*/} 
+                {/*Render a column component with the props being passed in from the parent*/}
                 <Column
                   title={"Budgeting"}
                   transitionTime={1.175}
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     );
   }
 }
