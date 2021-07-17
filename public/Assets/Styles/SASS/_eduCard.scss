@@ -1,5 +1,22 @@
 
 .eduCard {
+
+    p{
+        max-width:550px;
+    }  
+
+    &:not(.closed){
+        .row:last-of-type{
+            position: relative;
+            top: -40px;   
+
+            button{
+                position: relative;
+                bottom: -30px;
+            }
+           }
+    }
+
     transition: 0.3s all ease-in-out;
     &:hover {
         -webkit-box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.35);
@@ -24,3 +41,4 @@
         width:100%;
        }
 }
+

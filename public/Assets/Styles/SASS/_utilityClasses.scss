@@ -1,5 +1,5 @@
 
-$maxCount: 120;
+$maxCount: 84;
 
 @for $i from 0 through $maxCount {
 	.margin-#{$i}px{
@@ -15,11 +15,11 @@ $maxCount: 120;
 	}
 
 	.margin-left-#{$i}px {
-		margin-top: #{$i}px;
+		margin-left: #{$i}px;
 	}
 
 	.margin-right-#{$i}px {
-		margin-bottom: #{$i}px;
+		margin-right: #{$i}px;
 	}
 
 	.margin-verticle-#{$i}px {
@@ -46,11 +46,11 @@ $maxCount: 120;
 	}
 
 	.padding-left-#{$i}px {
-		padding-top: #{$i}px;
+		padding-left: #{$i}px;
 	}
 
 	.padding-right-#{$i}px {
-		padding-bottom: #{$i}px;
+		padding-right: #{$i}px;
 	}
 
 	.padding-verticle-#{$i}px {

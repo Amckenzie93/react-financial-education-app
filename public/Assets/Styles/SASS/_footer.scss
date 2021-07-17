@@ -4,6 +4,11 @@ footer {
     > div {
         padding: 3em 0em;
 
+        h5{
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
         ul {
             margin-top:1em;
             > li{
@@ -28,10 +33,7 @@ footer {
 
         } 
 
-        h5{
-            font-weight: bold;
-            font-size: 1.5em;
-        }
+
     }
 
     .copyright{

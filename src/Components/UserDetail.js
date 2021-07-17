@@ -1,14 +1,15 @@
+import Budgeter from "../Components/Budgeter";
 import { DataHandler } from "../Services/clientDataHandler"
-import LineCharts from "../Components/LineCharts.js";
+import LineCharts from "../Components/LineCharts";
 import React from "react";
 import Transitions from "../utility/transitions"
+import { getByDisplayValue } from "@testing-library/react";
 import { motion } from "framer-motion";
 
 class UserDetail extends React.Component {
   constructor() {
     super();
     this.state = {
-      userName: null,
       salary: "",
       savings: "",
       savingsRate: "",
@@ -21,11 +22,13 @@ class UserDetail extends React.Component {
     this.openEdit = this.openEdit.bind(this);
   }
 
+
   render() {
 
     let dataHandlerService = DataHandler.getInstance();
     const data = dataHandlerService.getAllData();
     let transition = Transitions.getInstance();
+
 
     // if the user already has valid data 
     if (dataHandlerService.validateSavings()) {
@@ -102,11 +105,14 @@ class UserDetail extends React.Component {
                       %
                     </li>
                     <br></br>
-                    <button onClick={this.closeEdit}>Save</button>
+                    <button onClick={this.closeEdit}>Close</button>
                   </ul>
                 </div>
               </div>
             </div>
+
+            <Budgeter />
+
             <motion.div
               initial="out"
               animate="in"
@@ -156,6 +162,9 @@ class UserDetail extends React.Component {
                  </div>
                </div>
              </div>
+
+             <Budgeter />
+
              <motion.div
                initial="out"
                animate="in"
@@ -186,23 +195,10 @@ class UserDetail extends React.Component {
           </div>
           <div className="row">
             <form className="col-12 col-md" onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <label className="form-text " htmlFor="username">
-                  Name{" "}
-                </label>
-                <input
-                  className="form-control"
-                  required
-                  id="username"
-                  name="username"
-                  value={data.userName}
-                  type="text"
-                />
-              </div>
 
               <div className="form-group">
                 <label className="form-text" htmlFor="salary">
-                  Salary{" "}
+                  Salary
                 </label>
                 <input
                   className="form-control"
@@ -215,7 +211,7 @@ class UserDetail extends React.Component {
 
               <div className="form-group">
                 <label className="form-text" htmlFor="savings">
-                  Savings{" "}
+                  Savings
                 </label>
                 <input
                   className="form-control"
@@ -228,7 +224,7 @@ class UserDetail extends React.Component {
 
               <div className="form-group">
                 <label className="form-text" htmlFor="savingsRate">
-                  Savings rate (%){" "}
+                  Savings rate %
                 </label>
                 <input
                   className="form-control"
@@ -241,7 +237,7 @@ class UserDetail extends React.Component {
 
               <div className="form-group">
                 <label htmlFor="savingsFreq" className="form-text">
-                  How often do you add to your savings?{" "}
+                  How often do you add to your savings?
                 </label>
                 <select
                   name="savingsFreq"
@@ -282,7 +278,9 @@ class UserDetail extends React.Component {
     }
   }
 
-  // when the user makes a change to their data on the application, update the react components state and store/update the persistant data on the users device.
+  // when the user makes a change to their data on the application, 
+  //update the react components state and store/update the persistant 
+  //data on the users device.
   onInputchange(event) {
     localStorage.setItem([event.target.name], event.target.value);
     this.setState({
@@ -309,14 +307,12 @@ class UserDetail extends React.Component {
   handleSubmit = (event) => {
     const data = new FormData(event.target);
     this.setState({
-      userName: data.get("username"),
       salary: data.get("salary"),
       savings: data.get("savings"),
       savings: data.get("savingsRate"),
       savingsFreq: data.get("savingsFreq"),
       savingsRateAmountPer: data.get("savingsRateAmountPer"),
     });
-    localStorage.setItem("userName", data.get("username"));
     localStorage.setItem("salary", data.get("salary"));
     localStorage.setItem("savings", data.get("savings"));
     localStorage.setItem("savingsRate", data.get("savingsRate"));
@@ -327,13 +323,11 @@ class UserDetail extends React.Component {
   // get and set the state of the component based on any previously saved data.
   trysetState = () => {
       this.state.salary = localStorage.getItem("salary");
-      this.state.userName = localStorage.getItem("userName");
       this.state.savings = localStorage.getItem("savings");
       this.state.savingsRate = localStorage.getItem("savingsRate");
       this.state.savingsFreq = localStorage.getItem("savingsFreq");
       this.state.savingsRateAmountPer = localStorage.getItem("savingsRateAmountPer");
       let dataHandlerService = DataHandler.getInstance();
-      dataHandlerService.setUsername(this.state.userName);
       dataHandlerService.setSalary(this.state.salary);
       dataHandlerService.setSavings(this.state.savings);
       dataHandlerService.setSavingsRate(this.state.savingsRate);

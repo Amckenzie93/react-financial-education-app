@@ -19,30 +19,33 @@ class SettingsPage extends React.Component {
     let transition = Transitions.getInstance();
     
 if (dataHandlerService.hasAnyData()) {
-  return(
-  <motion.div
-    initial="out"
-    animate="in"
-    exit="out"
-    variants={transition.getTransition()}
-    transition={{ duration: 0.62 }}
-  >
+  return (
     <React.Fragment>
       <div className="text-black min-height-100vh">
         <div className="padding-verticle-84px">
-
-        <Banner
-        title={"Your Settings"}
-        paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"}
-        image={"/Assets/Images/settings.svg"}/>
-
           <motion.div
-          initial="out"
-          animate="in"
-          exit="out"
-          variants={transition.getTransition()}
-          transition={{ duration: 0.9 }}
-          className="container px-4">
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={transition.getTransition()}
+            transition={{ duration: 0.62 }}
+          >
+            <Banner
+              title={"Your Settings"}
+              paragraph={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"
+              }
+              image={"/Assets/Images/settings.svg"}
+            />
+          </motion.div>
+          <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={transition.getTransition()}
+            transition={{ duration: 0.9 }}
+            className="container px-4"
+          >
             <div className="bg-white bg-shadow-up pt-1 margin-top-80px">
               <div className="container py-5 px-5 mt-5">
                 <div className="row text-center">
@@ -70,11 +73,11 @@ if (dataHandlerService.hasAnyData()) {
         </div>
       </div>
     </React.Fragment>
-  </motion.div>
   );
 } else {
   return (
 
+    //Animate the page into view on render 
     <motion.div
     initial="out"
     animate="in"
@@ -82,15 +85,12 @@ if (dataHandlerService.hasAnyData()) {
     variants={transition.getTransition()}
     transition={{ duration: 0.62 }}
   >
-    <React.Fragment>
       <div className="text-black min-height-100vh">
         <div className="padding-verticle-84px">
-
         <Banner
         title={"Your Settings"}
         paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"}
         image={"/Assets/Images/settings.svg"}/>
-
           <motion.div
           initial="out"
           animate="in"
@@ -116,7 +116,6 @@ if (dataHandlerService.hasAnyData()) {
           </motion.div>
         </div>
       </div>
-    </React.Fragment>
   </motion.div>
 
   );
@@ -130,14 +129,31 @@ if (dataHandlerService.hasAnyData()) {
 
   renderData = (data) => {
     let collection = [];
+    let jsonCollection = [];
+
     for (const key in data) {
-      collection.push(`${key}: ${data[key]}`)
+      // to render the json collection for these arrays 
+      // they need to be captured outside of the data for processing
+      // could be implemented better in future*
+      if(key != "lessonData" && key != "budgetArray"){
+        //push data to array for rendering in the return section below
+        collection.push(`${key}: ${data[key]}`)
+      }
+      else{
+        jsonCollection.push((`${key}: ${data[key]}`))
+      }
     }
+
+    //return all the data in html format using both collections
     return (
       <div>
           {collection.map(function(item, index){
-              return <div key={ index }>{item}</div>;
-            })}
+              return <pre key={ index }>{item}</pre>;
+          })}
+          {/* Json arrays need formatting - to be done */}
+          {jsonCollection.map(function(item, index){
+              return <pre key={ index }>{item}</pre>;
+          })}
       </div>
     )
   }

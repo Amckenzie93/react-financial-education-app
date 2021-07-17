@@ -18,6 +18,7 @@ class LineCharts extends React.Component {
                 account).
               </p>
             </div>
+            
             <LineChart
             //chartType={"Savings Account"}
               title={"Savings Account vs Stock Market"}

@@ -16,6 +16,7 @@ class Header extends React.Component {
 
   closeOnClick = (event) => {
     document.getElementById("navbarNav").classList.add("collapse");
+    document.getElementById("MainContent").classList.remove("blur");
   }
 
   render(){

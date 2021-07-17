@@ -8,11 +8,12 @@ export class DataHandler {
     savingsFreq: localStorage.getItem("savingsFreq"),
     savingsRateAmountPer: localStorage.getItem("savingsRateAmountPer"),
     lessonData: localStorage.getItem("lessonData"),
+    budgetArray : localStorage.getItem("budgetArray")
   };
 
   static singleton = null;
 
-  static getInstance() {
+  static getInstance = () => {
     if (DataHandler.singleton == null) {
       DataHandler.singleton = new DataHandler();
     }
@@ -52,9 +53,15 @@ export class DataHandler {
     localStorage.setItem("savingsRateAmountPer", value);
   };
 
-  // setCompletedLessons = (value) => {
-  //   localStorage.setItem("lessonData", value);
-  // };
+  setBudgetArray = (value) => {
+    localStorage.setItem("budgetArray", JSON.stringify(value));
+    this.dataStore.budgetArray = JSON.stringify(value);
+  }
+  
+  getBudgetArray = () => {
+    let data =  JSON.parse(this.dataStore.budgetArray);
+    return data;
+  }
 
   setAny(input) {
     localStorage.setItem([input.target.name], input.target.value);
@@ -161,8 +168,8 @@ export class DataHandler {
   getLessonStatus = (id) => {
     let jsonData = JSON.parse(this.dataStore.lessonData);
     return jsonData.lessons[id-1].completed;
-    
   }
+
 
   deleteData = () => {
     localStorage.removeItem("userName");
@@ -172,15 +179,8 @@ export class DataHandler {
     localStorage.removeItem("savingsFreq");
     localStorage.removeItem("savingsRateAmountPer");
     localStorage.removeItem("lessonData");
+    localStorage.removeItem("budgetArray");
     this.dataStore = {};
   }
 
-  // setAllFormData(data){
-  //     localStorage.setItem("userName", data.get("username"));
-  //     localStorage.setItem("salary", data.get("salary"));
-  //     localStorage.setItem("savings", data.get("savings"));
-  //     localStorage.setItem("savingsRate", data.get("savingsRate"));
-  //     localStorage.setItem("savingsFreq", data.get("savingsFreq"));
-  //     localStorage.setItem("savingsRateAmountPer", data.get("savingsRateAmountPer"));
-  // }
 }

@@ -23,8 +23,8 @@ class Hero extends React.Component {
 
     if (dataHandlerService.validName() && this.state.entered != true){
       return (
-        <div className="hero text-white padding-top-84px px-4 mb-5">
-          <div className="container pt-5">
+        <div className="hero text-white padding-top-84px px-4">
+          <div className="container pt-5 px-2">
             <div className="row">
               <div className="col-lg-4">
                 <div className="v-align">
@@ -50,7 +50,7 @@ class Hero extends React.Component {
 
     if (this.state.expanded === true && this.state.entered != true) {
       return (
-        <div className="hero text-white padding-top-84px mb-5">
+        <div className="hero text-white padding-top-84px px-2">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
@@ -76,7 +76,7 @@ class Hero extends React.Component {
                         placeholder="Gandalf the grey"
                       />
 
-                      <button className="btn btn-primary" type="submit" tabindex="0">
+                      <button className="btn btn-primary" type="submit" tabIndex="0">
                         Save
                       </button>
                     </div>
@@ -96,7 +96,7 @@ class Hero extends React.Component {
     }
     else if(this.state.expanded === true && this.state.entered === true){
       return (
-        <div className="hero text-white padding-top-84px mb-5">
+        <div className="hero text-white padding-top-84px px-2">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
@@ -112,7 +112,7 @@ class Hero extends React.Component {
                       className="btn btn-primary mt-2"
                       to="/education"
                       role="button"
-                      tabindex="0"
+                      tabIndex="0"
                     >
                       Begin
                     </NavLink>
@@ -132,7 +132,7 @@ class Hero extends React.Component {
     }
     else {
       return (
-        <div className="hero text-white padding-top-84px mb-5">
+        <div className="hero text-white padding-top-84px px-2">
           <div className="container pt-5 px-4">
             <div className="row">
               <div className="col-lg-4">
@@ -150,7 +150,7 @@ class Hero extends React.Component {
                     className="btn btn-primary mt-2"
                     role="button"
                     onClick={this.expand}
-                    tabindex="0"
+                    tabIndex="0"
                   >
                     Start your Journey
                   </a>

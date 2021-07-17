@@ -15,7 +15,7 @@ class Banner extends React.Component {
             <div className="col-lg-6">
               <div className="v-align">
                 <img className="width100 mobile mb-1" src={this.props.image} />
-                <h1 className="mb-2">{this.props.title} {this.props.usersName != "" ? this.props.usersName : null}</h1>
+                <h1 className="mb-2 capitalise">{this.props.title} {this.props.usersName != "" ? this.props.usersName : null}</h1>
                 {/* If Subtitle is passed in as a prop, render the subtitle, else render blank*/}
                 {this.props.subTitle != "" ? <h2 className="mb-4">{this.props.subTitle}</h2> : null}
                 <p className="mb-0">{this.props.paragraph}</p>

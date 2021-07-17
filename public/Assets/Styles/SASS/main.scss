@@ -3,17 +3,20 @@ body {
 	font: $font-size;
 	color: $primary-color;
 
-		@import "_navigation.scss";
+	@import "_budgeter.scss";
 
-		@import "_footer.scss";
+	@import "_buttonAndInputs.scss";
 
-		@import "_eduCard.scss";
+	@import "_eduCard.scss";
 
-		@import "_userDetails.scss";
+	@import "_footer.scss";
 
-		@import "_hero.scss";
+	@import "_hero.scss";
 
-		@import "_buttonAndInputs.scss";
+	@import "_navigation.scss";
 
-		@import "_utilityClasses.scss";
+	@import "_userDetails.scss";
+
+	@import "_utilityClasses.scss";
+	
 }
