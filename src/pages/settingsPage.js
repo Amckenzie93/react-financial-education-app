@@ -77,6 +77,7 @@ if (dataHandlerService.hasAnyData()) {
 } else {
   return (
 
+    //Animate the page into view on render 
     <motion.div
     initial="out"
     animate="in"
@@ -84,15 +85,12 @@ if (dataHandlerService.hasAnyData()) {
     variants={transition.getTransition()}
     transition={{ duration: 0.62 }}
   >
-    <React.Fragment>
       <div className="text-black min-height-100vh">
         <div className="padding-verticle-84px">
-
         <Banner
         title={"Your Settings"}
         paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"}
         image={"/Assets/Images/settings.svg"}/>
-
           <motion.div
           initial="out"
           animate="in"
@@ -118,7 +116,6 @@ if (dataHandlerService.hasAnyData()) {
           </motion.div>
         </div>
       </div>
-    </React.Fragment>
   </motion.div>
 
   );
@@ -146,18 +143,17 @@ if (dataHandlerService.hasAnyData()) {
         jsonCollection.push((`${key}: ${data[key]}`))
       }
     }
-    debugger;
+
     //return all the data in html format using both collections
     return (
       <div>
           {collection.map(function(item, index){
               return <pre key={ index }>{item}</pre>;
           })}
-
+          {/* Json arrays need formatting - to be done */}
           {jsonCollection.map(function(item, index){
               return <pre key={ index }>{item}</pre>;
           })}
-
       </div>
     )
   }

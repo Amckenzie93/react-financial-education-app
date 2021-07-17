@@ -31,8 +31,8 @@ class LineChart extends React.Component {
             <br></br>
             <p>{this.props.paragraph}</p>
             <br></br>
-            <h4>Scenario details</h4>
-            <ul className="ml-0 mb-4">
+            <h4 className="margin-bottom-24px">Scenario details</h4>
+            <ul className="ml-0 padding-left-30px">
                     {/* render any lesson point properties passed in as list items available */}
                     {this.props.listItems.map((item, index) => <li className="mb-2" key={index}>{item}</li>)}
             </ul>
@@ -40,20 +40,11 @@ class LineChart extends React.Component {
             <Chart
             width="100%"
             height={'450px'}
-              chartType="Line"
+              chartType="LineChart"
               loader={<div>Loading Chart</div>}
               data={this.generateChartData(51,this.props.chartType)}
               options={{
-                hAxis: {
-                  title: 'Years',
-                },
-                vAxis: {
-                  title: 'GBP (k)',
-                },
-                series: {
-                  0: { curveType: 'function' },
-                  1: { curveType: 'function' },
-                },
+                legend: { position: "bottom" }
               }}
             />
             </div>
@@ -97,6 +88,7 @@ class LineChart extends React.Component {
 
     for(let i = 0; i < years; i++) 
     {
+      //set base year savings aka year 0 to current savings totals entered in the react state.
       if(i === 0 ){
         savingstotal = savings;
         isaSavingstotal = isaSavings;

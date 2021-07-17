@@ -278,7 +278,9 @@ class UserDetail extends React.Component {
     }
   }
 
-  // when the user makes a change to their data on the application, update the react components state and store/update the persistant data on the users device.
+  // when the user makes a change to their data on the application, 
+  //update the react components state and store/update the persistant 
+  //data on the users device.
   onInputchange(event) {
     localStorage.setItem([event.target.name], event.target.value);
     this.setState({
