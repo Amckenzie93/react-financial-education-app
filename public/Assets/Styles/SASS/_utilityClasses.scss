@@ -1,6 +1,8 @@
 
+// variable to loop
 $maxCount: 84;
 
+// SCSS Looping each margin and padding class ranging from 0 to 84 pixels as passed in from variable. 
 @for $i from 0 through $maxCount {
 	.margin-#{$i}px{
 		margin: #{$i}px;

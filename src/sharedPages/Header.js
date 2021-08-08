@@ -1,4 +1,3 @@
-import { DataHandler } from "../Services/clientDataHandler"
 import { NavLink } from "react-router-dom";
 import React from 'react';
 
@@ -20,8 +19,6 @@ class Header extends React.Component {
   }
 
   render(){
-
-    let dataHandlerService = DataHandler.getInstance();
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark">

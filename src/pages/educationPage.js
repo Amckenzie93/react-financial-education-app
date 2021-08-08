@@ -62,9 +62,9 @@ class educationPage extends React.Component {
             lessonText={"topic text conveying information in which should help educate the users on what money actually is and its history etc."}
             lessonPoints={["Snowball Method", "Avalanch Method"]}
             subHeading1={"Snowball Method"}
-            subParagraph1={"Details about Snowball bdfgndjndk dfgjn dkfgnjfkdg Pay off the smallest debt first and continue this process knocking off each as you go"}
+            subParagraph1={"Details about Snowball - Pay off the smallest debt first and continue this process knocking off each as you go"}
             subHeading2={"Avalanch Method"}
-            subParagraph2={"Details about avalanch method dfsgg fkldg dlgfgj mlmdfg pay the minimum on all debts focusing any other money on the highest interest rate"}
+            subParagraph2={"Details about avalanch method - pay the minimum on all debts focusing any other money on the highest interest rate"}
             imageUrl={"./Assets/Images/1.png"}
             alt={"Graphical icon of x."}
             />
