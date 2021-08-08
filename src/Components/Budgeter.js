@@ -4,12 +4,12 @@ import React from "react";
 class Budgeter extends React.Component {
   constructor() {
     super();
+    // setting the react component state with the following properties for use
     this.state = {
       adding: false,
       itemsArray: [],
       name:"",
       value:0,
-      
     };
   }
 
@@ -18,13 +18,14 @@ class Budgeter extends React.Component {
     let dataHandlerService = DataHandler.getInstance();
     let data = dataHandlerService.getBudgetArray();
    
+    // return this view if the user is adding a budget item to the list
     if(this.state.adding){
       return(
         <div className="budgetControl container mt-5 py-5 px-5 card">
         <div className="row">
           <div className="col-12">
             <h2>Your budget</h2>
-            <p>bla bla bla bla bla</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
         <div className="row">
@@ -38,7 +39,8 @@ class Budgeter extends React.Component {
       </div>
       )
     }
-    
+
+    //else return the budget collection if it has data
     else if(data != null){
       this.state.itemsArray = data;
         return (
@@ -46,7 +48,7 @@ class Budgeter extends React.Component {
             <div className="row">
               <div className="col-12">
                 <h2>Your budget</h2>
-                <p>bla bla bla bla bla</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
               <div className="col-12 titles">
                 <div className="row">
@@ -75,13 +77,14 @@ class Budgeter extends React.Component {
           </div>
         );
     }
+    //otherwise show an empty budgeting list
     else{
       return (
         <div className="budgetControl container mt-5 py-5 px-5 card ">
           <div className="row">
             <div className="col-12">
               <h2>Your budget</h2>
-              <p>bla bla bla bla bla</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div className="col-12 titles">
               <div className="row">
@@ -108,18 +111,21 @@ class Budgeter extends React.Component {
     }
   }
 
+  // arrow function setting the components state of 'adding' to true which drives the view render
   openAddItem =() => {
     this.setState({
       adding:true
     })
   }
 
+  // arrow function to cancel setting any budget items, setting state of 'adding' to false
   cancelAdd = () => {
     this.setState({
       adding:false
     })
   }
 
+  // completes adding a budget item, and stores it back to the data client for perminant storage.
   completeAdd = () => {
     let dataHandlerService = DataHandler.getInstance();
     let item = {
@@ -136,6 +142,17 @@ class Budgeter extends React.Component {
     })
   }
 
+  
+  // function to calculate the total from the budget 
+  calcTotal = (array) => {
+    let total = 0;
+    array.forEach((item) => {
+      total = total + parseInt(item.value);
+    });
+
+    return total;
+  }
+
   nameChange = (e) => {
     this.setState({ name: e.target.value });
   }
@@ -143,18 +160,6 @@ class Budgeter extends React.Component {
   valueChange = (e) => {
     this.setState({ value: e.target.value });
   }
-
-
-
-  calcTotal = (array) => {
-    let total = 0;
-    array.forEach(item => {
-      total = total + parseInt(item.value);
-    });
-    
-    return total;
-  }
-
 
 }
 export default Budgeter;

@@ -32,6 +32,7 @@ class Banner extends React.Component {
       );
     }
 
+    // arrow function to return the users name to render in the component markup above dynamically.
     renderName = (name) => {
       if(name != null){
         return(
