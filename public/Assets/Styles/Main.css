@@ -24,12 +24,20 @@ body .font-bold {
   font-weight: bold;
 }
 
+body .font-underline {
+  text-decoration: underline;
+}
+
 body .text-center {
   text-align: center;
 }
 
 body .capitalise {
   text-transform: capitalize;
+}
+
+body .white {
+  color: #fff;
 }
 
 body .font-size-1px {
@@ -367,6 +375,11 @@ body .budgetControl .titles .row > div:first-of-type {
   border-right: 1px solid #cacaca;
 }
 
+body .budgetControl .chart .row {
+  border-bottom: 1px solid #cacaca;
+  font-weight: 600;
+}
+
 body .budgetControl .chart .row .name {
   text-align: right;
   border-right: 1px solid #cacaca;
@@ -376,11 +389,19 @@ body .budgetControl .chart .row .value {
   text-align: left;
 }
 
+body .budgetControl .chart .row.positive {
+  color: #333;
+}
+
+body .budgetControl .chart .row.negative {
+  color: #bf0404;
+}
+
 body .budgetControl .chart .row > div {
   padding: 1em;
 }
 
-body .budgetControl .chart .row:nth-of-type(odd) .name, body .budgetControl .chart .row:nth-of-type(odd) .value {
+body .budgetControl .chart > div:nth-of-type(odd) .name, body .budgetControl .chart > div:nth-of-type(odd) .value {
   background: #eaeaea;
 }
 
@@ -394,9 +415,16 @@ body .budgetControl .totals .row .value {
   font-weight: bold;
 }
 
+body .budgetControl .totals .row .value.positive {
+  color: #333;
+}
+
+body .budgetControl .totals .row .value.negative {
+  color: #bf0404;
+}
+
 body .budgetControl .totals .row > div {
   padding: 1em;
-  border-top: 1px solid #cacaca;
 }
 
 body .budgetControl .totals .row > div:first-of-type {

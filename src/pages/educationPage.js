@@ -29,7 +29,7 @@ class educationPage extends React.Component {
           <Banner
             title={"Hello"}
             usersName={this.state.userName}
-            subTitle={"Welcome to finance education at your own pace"}
+            subTitle={"Welcome to financial education set at your own pace"}
             paragraph={"Please In your own time feel free to go through each of the offered modules listed below about general finance and how to get the upper hand In order to better yourself financially for the future."}
             image={"./Assets/Images/2.svg"}
           />

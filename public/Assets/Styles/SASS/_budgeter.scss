@@ -17,6 +17,9 @@
 
     .chart{
         .row{
+            border-bottom: 1px solid #cacaca;
+            font-weight: 600;
+            
             .name{
                 text-align: right;
                 border-right: 1px solid #cacaca;
@@ -25,12 +28,19 @@
                 text-align: left;
             }
 
+            &.positive{
+                color:$primary-color;
+            }
+
+            &.negative{
+                color:#bf0404;
+            }   
+
             >div {
                 padding:1em;
             }
         }
-
-        .row:nth-of-type(odd){
+        >div:nth-of-type(odd){
             .name, .value{
                 background: #eaeaea;
             }
@@ -46,11 +56,19 @@
             .value{
                 text-align: left;
                 font-weight: bold;
+
+                &.positive{
+                    color:$primary-color;
+                }
+    
+                &.negative{
+                    color:#bf0404;
+                }    
+
             }
 
             >div {
                 padding:1em;
-                border-top: 1px solid #cacaca;
             }
             >div:first-of-type{
                 text-align: right;

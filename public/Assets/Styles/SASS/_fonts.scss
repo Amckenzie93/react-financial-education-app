@@ -1,6 +1,7 @@
 $font-size: 18px;
 $primary-color: #333;
 
+
 h1 {
     font-size: 4em;
     font-weight: bold;
@@ -22,6 +23,11 @@ p {
     font-weight:bold;
 }
 
+.font-underline{
+    text-decoration:underline;
+}
+
+
 .text-center{
     text-align:center;
 }
@@ -29,6 +35,11 @@ p {
 .capitalise{
     text-transform:capitalize;
 }
+
+.white{
+    color:#fff;
+}
+
 
 // mixin to create utility classes for font sizes ranging from 1 - 80px 
 $maxCount: 80;

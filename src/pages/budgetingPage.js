@@ -32,6 +32,7 @@ class budgetingPage extends React.Component {
                   "Please use the dashboard offered to enter your financial information so that you can tweak it and adjust so that you can see a rough estimation of the impact it has had over 50 years."
                 }
                 image={"./Assets/Images/me.svg"}
+                dataNotice={true}
               />
             </motion.div>
             <motion.div
