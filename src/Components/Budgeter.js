@@ -48,26 +48,46 @@ class Budgeter extends React.Component {
             <div className="row">
               <div className="col-12">
                 <h2>Your budget</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="mb-1">Feel free to list your monthly, weekly, or yearly budget onto the web app.</p>
+                <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
               <div className="col-12 titles">
                 <div className="row">
-                  <div className="col-xl-2 col-lg-2 col-md-3 col-6">name</div>
-                  <div className="col-xl-10 col-lg-10 col-md-9 col-6">value</div>
+                  <div className="col-xl-2 col-lg-2 col-md-3 col-6">Item name</div>
+                  <div className="col-xl-10 col-lg-10 col-md-9 col-6">Item value</div>
                 </div>
               </div>
               <div className="col-12 chart">
+                {/* Map function listing each of the budget items the user has entered split 
+                by a ternary statement based on whether the figure is positive or negative.  */}
                     {this.state.itemsArray.map((item, index) => (
-                      <div className="row" key={index}>
-                        <div className="col-xl-2 col-lg-2 col-md-3 col-6 name"> {item.name} </div>
-                        <div className="col-xl-10 col-lg-10 col-md-9 col-6 value">{"£"+item.value}</div>
-                       </div>
+                      <div>
+                        {this.isPositive(item.value)? (
+                          <div className="row positive" key={index}>
+                          <div className="col-xl-2 col-lg-2 col-md-3 col-6 name">{item.name}</div>
+                          <div className="col-xl-10 col-lg-10 col-md-9 col-6 value">{item.value}</div>
+                          </div>
+                        ) 
+                      : (
+                        <div className="row negative" key={index}>
+                          <div className="col-xl-2 col-lg-2 col-md-3 col-6 name">{item.name}</div>
+                          <div className="col-xl-10 col-lg-10 col-md-9 col-6 value">{item.value}</div>
+                        </div>
+                        )}
+                      </div>  
                     ))}
               </div>
               <div className="col-12 mb-4 totals">
                     <div className="row">
-                      <div className="col-xl-2 col-lg-2 col-md-3 col-6 name"> Total </div>
-                      <div className="col-xl-10 col-lg-10 col-md-9 col-6 value">£{this.calcTotal(this.state.itemsArray)}</div>
+                      <div className="col-xl-2 col-lg-2 col-md-3 col-6 name"> Total (£) </div>
+                      {/* check total value and append appropriate class name to display negative or positive*/}
+                      {this.isPositive(this.calcTotal(this.state.itemsArray))? (
+                        <div className="col-xl-10 col-lg-10 col-md-9 col-6 value positive">{this.calcTotal(this.state.itemsArray)}</div>
+                      )
+                      :
+                      (
+                          <div className="col-xl-10 col-lg-10 col-md-9 col-6 value negative">{this.calcTotal(this.state.itemsArray)}</div>
+                      )}
                       </div>
               </div>
               <button className="btn btn-primary" onClick={this.openAddItem}>
@@ -88,8 +108,8 @@ class Budgeter extends React.Component {
             </div>
             <div className="col-12 titles">
               <div className="row">
-                <div className="col-xl-2 col-lg-2 col-md-3 col-6">name</div>
-                <div className="col-xl-10 col-lg-10 col-md-9 col-6">value</div>
+                <div className="col-xl-2 col-lg-2 col-md-3 col-6">Item name</div>
+                <div className="col-xl-10 col-lg-10 col-md-9 col-6">Item value</div>
               </div>
             </div>
             <div className="col-12 chart mb-4">
@@ -140,6 +160,15 @@ class Budgeter extends React.Component {
       adding:false,
       itemsArray: currentItems
     })
+  }
+
+  isPositive = (value) =>{
+    if(value >0){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   

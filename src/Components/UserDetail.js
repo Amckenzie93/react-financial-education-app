@@ -98,6 +98,7 @@ class UserDetail extends React.Component {
                       Interest rate{" "}
                       <input
                         type="number"
+                        placeholder="0.5" step="0.01" min="0" max="99"
                         name="savingsRate"
                         onChange={this.onInputchange}
                         value={this.state.savingsRate}
@@ -110,9 +111,7 @@ class UserDetail extends React.Component {
                 </div>
               </div>
             </div>
-
-            <Budgeter />
-
+            
             <motion.div
               initial="out"
               animate="in"
@@ -120,8 +119,11 @@ class UserDetail extends React.Component {
               variants={transition.getTransition()}
               transition={{ duration: 0.9 }}
             >
+              {/* Call to render LineChart component with sufficient data */}
               <LineCharts />
             </motion.div>
+            {/* Call to render budgeter component with sufficient data */}
+            <Budgeter />
           </div>
         );
       } // else render the users data in the un-editing version of HTML
@@ -163,8 +165,6 @@ class UserDetail extends React.Component {
                </div>
              </div>
 
-             <Budgeter />
-
              <motion.div
                initial="out"
                animate="in"
@@ -172,8 +172,11 @@ class UserDetail extends React.Component {
                variants={transition.getTransition()}
                transition={{ duration: 0.82 }}
              >
+               {/* Call to render Linechart component with sufficient data */}
                <LineCharts />
              </motion.div>
+              {/* Call to render Budgeter component with sufficient data */}
+              <Budgeter />
            </div>
          );
       }
@@ -231,7 +234,7 @@ class UserDetail extends React.Component {
                   required
                   id="savingsRate"
                   name="savingsRate"
-                  type="number"
+                  placeholder="0.5" step="0.01" min="0" max="99"
                 />
               </div>
 

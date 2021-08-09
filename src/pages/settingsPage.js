@@ -36,6 +36,7 @@ if (dataHandlerService.hasAnyData()) {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet mauris sed leo suscipit pretium. Mauris nec nulla tortor. Integer eget cursus justo"
               }
               image={"/Assets/Images/settings.svg"}
+              dataNotice={true}
             />
           </motion.div>
           <motion.div

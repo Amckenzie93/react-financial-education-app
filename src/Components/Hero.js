@@ -65,7 +65,7 @@ class Hero extends React.Component {
                     onSubmit={this.handleSubmit}
                     autoComplete="off"
                   >
-                    <p>lets start with your name</p>
+                    <p>lets start with a name</p>
                     <div className="form-group">
                       <input
                         className="form-control mb-4"
@@ -73,12 +73,18 @@ class Hero extends React.Component {
                         name="username"
                         type="text"
                         required
-                        placeholder="Gandalf the grey"
+                        placeholder="Rupert the thoughtful"
                       />
-
-                      <button className="btn btn-primary" type="submit" tabIndex="0">
+                      <button className="btn btn-primary margin-bottom-18px" type="submit" tabIndex="0">
                         Save
                       </button>
+                      <p className="font-size-14px">To continue without a name, <NavLink
+                      className="font-bold white font-underline"
+                      to="/education"
+                      role="button"
+                      tabIndex="0">click here</NavLink>.</p>
+                       <p className="margin-bottom-4px">Please note: </p>
+                       <p className="font-size-14px">All information entered in this application will never leave your device. Its stored with you and only you have access to it. You can delete your data from the settings page at any time. </p>                      
                     </div>
                   </form>
                 </div>
