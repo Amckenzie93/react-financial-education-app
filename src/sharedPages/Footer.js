@@ -26,29 +26,6 @@ class Footer extends React.Component {
                 </ul>
               </div>
             </div>
-            {/* <div className="col-6 col-md">
-              <h5>Useful links</h5>
-              <ul className="list-unstyled text-small">
-                <li>
-                  <a href="https://www.libf.ac.uk/" target="_blank">
-                    The London Institue of banking and finance 
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.open.edu/openlearn/money-management/free-courses" target="_blank">
-                    Open University free financial courses
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.wsj.com/market-data" target="_blank">
-                   Wall street journal Market Data
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-6 col-md"></div>
-            <div className="col-6 col-md"></div>
-            <div className="col-6 col-md"></div> */}
           </div>
           <p className="copyright">
             Copyright &copy; All rights reserved 2021 Adam Mckenzie

@@ -3,7 +3,6 @@ import { DataHandler } from "../Services/clientDataHandler"
 import LineCharts from "../Components/LineCharts";
 import React from "react";
 import Transitions from "../utility/transitions"
-import { getByDisplayValue } from "@testing-library/react";
 import { motion } from "framer-motion";
 
 class UserDetail extends React.Component {

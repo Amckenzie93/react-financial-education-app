@@ -15,6 +15,7 @@ class Budgeter extends React.Component {
 
   render() {
 
+    //get the singleton instance of the data collection
     let dataHandlerService = DataHandler.getInstance();
     let data = dataHandlerService.getBudgetArray();
    
@@ -162,6 +163,7 @@ class Budgeter extends React.Component {
     })
   }
 
+  // function to return true or false whether a value passed in is negative or positive for the budget tool
   isPositive = (value) =>{
     if(value >0){
       return true;
@@ -182,6 +184,7 @@ class Budgeter extends React.Component {
     return total;
   }
 
+  // methods to set the state based on data passed in
   nameChange = (e) => {
     this.setState({ name: e.target.value });
   }

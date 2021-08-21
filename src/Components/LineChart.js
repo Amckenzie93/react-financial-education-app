@@ -21,7 +21,7 @@ class LineChart extends React.Component {
 
     if (dataHandlerService.validateSavings()){    
       this.setState();
-
+      //if data exists return this view
       return (
         <div className="container py-5 px-5 mt-5 card margin-bottom-36px">
         <div className="">
@@ -53,6 +53,7 @@ class LineChart extends React.Component {
       </div>
       );
     }
+    //otherwise if no data has been submitted, show the 'no data' view.
     else{
       return (
         <div className="container py-5 px-5 mt-5 card margin-bottom-36px">
@@ -64,12 +65,17 @@ class LineChart extends React.Component {
     }
   }
 
-
+//Method to generate the line chart data and calculate what the user 
+//savings would look like over 50 years. this is not an accurate
+//life like simulation of savings but instead to highlight 
+//the pros and cons of the different types of savings method.
   generateChartData = (yearSpan, type) => {
     let years = yearSpan;
     let crash = 0;
     let chartData;
 
+    // started work on making the chart function render different charts of different types
+    // of savings - however cannot be completed in time and will be done in future.
     // if(type == "Savings Account"){
     //   chartData = [["Years", type]];
     // }
@@ -136,6 +142,8 @@ class LineChart extends React.Component {
     return chartData;
   };
 
+
+  // switch statement that returns the number of weeks a user will save based on their selection. 
   savingFrequency(value) {
     switch (value) {
       case "Weekly":
@@ -161,12 +169,15 @@ class LineChart extends React.Component {
     }
   }
 
+  //method to generate a random number between two inputs passed in
   getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
   };
 
+
+  //function to set the state of the component with all user details when called.
   setState(){
     this.state.salary = localStorage.getItem("salary");
       this.state.userName = localStorage.getItem("userName");
