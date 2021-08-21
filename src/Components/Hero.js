@@ -21,6 +21,7 @@ class Hero extends React.Component {
       dataHandlerService.setUsername(this.state.userName)
     }
 
+    // if the user is a returning user and has a name - display this render
     if (dataHandlerService.validName() && this.state.entered != true){
       return (
         <div className="hero text-white padding-top-84px px-4">
@@ -48,6 +49,7 @@ class Hero extends React.Component {
       );
     }
 
+    // if the user has visited before, but has clicked next on the first tab, render this view
     if (this.state.expanded === true && this.state.entered != true) {
       return (
         <div className="hero text-white padding-top-84px px-2">
@@ -100,6 +102,7 @@ class Hero extends React.Component {
         </div>
       );
     }
+    //other wise if the user hasnt visited before but has clicked the first button and entered their name render this view
     else if(this.state.expanded === true && this.state.entered === true){
       return (
         <div className="hero text-white padding-top-84px px-2">
@@ -136,6 +139,7 @@ class Hero extends React.Component {
         </div>
       );
     }
+    // otherwise if the user is visiting for the first time with zero data, show this view
     else {
       return (
         <div className="hero text-white padding-top-84px px-2">
@@ -176,7 +180,7 @@ class Hero extends React.Component {
   }
 
 
-  
+  //function to set the state of the users name if it has been submitted before.
   trysetState = () => {
     if(localStorage.getItem("userName") != null){
       let dataHandlerService = DataHandler.getInstance();
@@ -187,7 +191,7 @@ class Hero extends React.Component {
     }
   };
 
-
+// function to handle the submit of the users name on entry
   handleSubmit = (event) => {
     event.preventDefault();
     let form = new FormData(event.target);
@@ -198,6 +202,7 @@ class Hero extends React.Component {
     });
   };
 
+  //function to handle the progression of steps for this component.
   expand = () => {
     if(this.state.expanded === true){
       this.setState({

@@ -1,5 +1,4 @@
 import React from "react";
-import Transitions from "../utility/transitions"
 
 class Banner extends React.Component {
   constructor() {
@@ -8,7 +7,6 @@ class Banner extends React.Component {
   }
 
   render() {
-    let transition = Transitions.getInstance();
       return (
         <div className="container pt-4 px-4 text-white margin-bottom-64px">
           <div className="row">
@@ -50,16 +48,6 @@ class Banner extends React.Component {
         )
       } 
     }
-
-    // arrow function to return the users name to render in the component markup above dynamically.
-    // now redundant.
-    // renderName = (name) => {
-    //   if(name != null){
-    //     return(
-    //       name
-    //     )
-    //   }
-    // }
 
 }
 export default Banner;

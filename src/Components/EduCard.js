@@ -11,6 +11,7 @@ class EduCard extends React.Component {
     };
   }
 
+  //when the component is mounted, get the singleton instance of data and create the lessons array for use
   componentDidMount(){
     let data = DataHandler.getInstance();
     this.createArray(this.props.lessonId, data);
@@ -167,6 +168,7 @@ class EduCard extends React.Component {
     });
   };
 
+  // function to set a lessons image to complete with a tick image overlay
   completeImage = (complete, alt) =>{
     if(complete == true){
       return(
@@ -179,6 +181,7 @@ class EduCard extends React.Component {
     }
   }
 
+  //function to handle to expanding of any of the lessons
   expand = () => {
     if (this.state.expanded === true) {
       this.setState({
