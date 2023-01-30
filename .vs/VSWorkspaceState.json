@@ -1,15 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\public",
-    "\\public\\Assets",
-    "\\public\\Assets\\Styles",
-    "\\public\\Assets\\Styles\\SASS",
-    "\\src",
-    "\\src\\Components",
-    "\\src\\pages",
-    "\\src\\sharedPages"
+    ""
   ],
-  "SelectedNode": "\\public\\Assets\\Styles\\SASS\\main.scss",
   "PreviewInSolutionExplorer": false
 }
