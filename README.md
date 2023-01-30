@@ -1,9 +1,10 @@
-# Website demo url 
+# Website demo 
 First ever react application built for university honours project
-https://gifted-poincare-dc16d8.netlify.app/
+
+URL: https://gifted-poincare-dc16d8.netlify.app/
 
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
